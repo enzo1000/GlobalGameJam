@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,43 +12,62 @@ public class ActionScript : MonoBehaviour
     private bool asExplosed = false;    //Is the action crashing or not
 
     public ActionScriptableObject ASO;
+    public int ASOIndex = 0;
 
     //ASO Assignement
     private string actionName;             //Name of the action
-    private string actionSeller;           //SellerName
+    private string actionSellerName;           //SellerName
+    private Sprite actionSellerImage;
+
     private float baseBubbleValue;         //Base cost of the Action for first appearance and futur variation
     private float visibilityCooldown;      //The visibility Cooldown of the Action 
     private int availableQuantity;         //Numbers of action buyable
-    private float minThreshold;           //???
-    private float maxThreshold;           //???
+    private float minThreshold;            //???
+    private float maxThreshold;            //???
     private float speculativeBubbleChance; //A percent of chances for the Action to crash
 
     //UI
     public GameObject UI_actionName;
-    public GameObject UI_actionSeller;
-    public GameObject UI_PSV;
-    public GameObject UI_Quantity;
+    public GameObject UI_actionSellerName;
+    public GameObject UI_actionSellerImage;
+    public GameObject UI_Timer;
+
+    public GameObject UI_detailedCanva;
 
     private void Start()
     {
-       actionName = ASO.actionParamList[0].actionName;
-        actionSeller = ASO.actionParamList[0].actionSeller;
-        baseBubbleValue = ASO.actionParamList[0].baseBubbleValue;
-        visibilityCooldown = ASO.actionParamList[0].visibilityCooldown;    //Not displayed
-        availableQuantity = ASO.actionParamList[0].availableQuantity;
-        minThreshold = ASO.actionParamList[0].minThreshold;
-        maxThreshold = ASO.actionParamList[0].maxThreshold;
-        speculativeBubbleChance = ASO.actionParamList[0].speculativeBubbleChance;
+        actionName = ASO.actionParamList[ASOIndex].actionName;
+        actionSellerName = ASO.actionParamList[ASOIndex].actionSellerName;
+        actionSellerImage = ASO.actionParamList[ASOIndex].actionSellerImage;
+        visibilityCooldown = ASO.actionParamList[ASOIndex].visibilityCooldown;    //Not displayed
 
         UI_actionName.GetComponent<TMP_Text>().text = actionName;
-        UI_actionSeller.GetComponent<TMP_Text>().text = actionSeller;
-        UI_PSV.GetComponent<TMP_Text>().text = baseBubbleValue.ToString();
+        UI_actionSellerName.GetComponent<TMP_Text>().text = actionSellerName;
+        UI_actionSellerImage.GetComponent<Image>().sprite = actionSellerImage;
 
-        //GameObject.Find("ActionName").GetComponent<Text>().text = actionName;
+        /*baseBubbleValue = ASO.actionParamList[ASOIndex].baseBubbleValue;
+        availableQuantity = ASO.actionParamList[ASOIndex].availableQuantity;
+        minThreshold = ASO.actionParamList[ASOIndex].minThreshold;
+        maxThreshold = ASO.actionParamList[ASOIndex].maxThreshold;
+        speculativeBubbleChance = ASO.actionParamList[ASOIndex].speculativeBubbleChance;*/
     }
 
     private void Update()
     {
-        
+        UI_Timer.GetComponent<TMP_Text>().text = visibilityCooldown.ToString();
+
+        if (UI_actionName.transform.parent.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Pressed"))
+        {
+            OpenCanvaButton(UI_detailedCanva, true);
+        }
+        else if (!UI_actionName.transform.parent.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Selected"))
+        {
+            OpenCanvaButton(UI_detailedCanva, false);
+        }
+    }
+
+    public void OpenCanvaButton(GameObject canva, bool active)
+    {
+        canva.SetActive(active);
     }
 }
