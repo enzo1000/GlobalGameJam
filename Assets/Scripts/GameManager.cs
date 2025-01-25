@@ -12,10 +12,10 @@ public enum NewsType
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] NewsScriptableObject newsData;
-    [SerializeField] GameObject newsPrefab;
+    [SerializeField] private NewsScriptableObject newsData;
+    [SerializeField] private GameObject newsPrefab;
 
-    private Bubble bubble;
+    [SerializeField] private Bubble bubble;
     private float bubbleTimer = 0.0f;
 
     [SerializeField] private PlayerManager player;
@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        bubble = new Bubble();
         musicManager = FindFirstObjectByType<DynamicMusicManager>(); //Ame pour la musique  pas sure que ce soit la bonne méthode deprecated shit
     }
 

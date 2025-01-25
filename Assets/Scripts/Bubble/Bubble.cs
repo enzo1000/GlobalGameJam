@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bubble
+public class Bubble: MonoBehaviour
 {
-    [SerializeField] GraphHandler graphHandler;
+    [SerializeField] BubbleGraph graph;
+
+    List<float> lastData = new List<float>();
 
     public float shellValue { get; set; }
 
@@ -12,14 +14,28 @@ public class Bubble
 
     int compteur = 0;
 
+    private void Start()
+    {
+        shellValue = 1.0f;
+    }
+
     public void UpdateValue()
     {
         compteur += 1;
         float stdDev = delta * delta * dt;
         // stdDev *= Random.value * 2;
-        shellValue = shellValue + GaussianRandom(stdDev);
-        graphHandler.CreatePoint(new Vector2(compteur, shellValue));
-        graphHandler.UpdateGraph();
+        shellValue = shellValue + GaussianRandom(stdDev) * 100;
+
+        if (shellValue <= 0)
+            shellValue = Random.Range(0.01f, 0.07f);
+
+        lastData.Add(shellValue);
+        if (lastData.Count > 30)
+        {
+            lastData.RemoveAt(0);
+        }
+
+        graph.ShowGraph(lastData);
     }
 
     // [TODO] à équilibrer
