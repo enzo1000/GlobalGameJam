@@ -16,9 +16,9 @@ MonoBehaviour:
   - actionName: "Action n\xB01"
     actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
     actionSellerName: "Sacr\xE9 homar"
-    baseBubbleValue: 0
     visibilityCooldown: 10
+    actionDescription: Le gros tarpet de madame crabe
+    initialActionCost: 15
+    initialActionStock: 50
+    investDanger: 20
     availableQuantity: 0
-    minThreshold: 0
-    maxThreshold: 0
-    speculativeBubbleChance: 0
