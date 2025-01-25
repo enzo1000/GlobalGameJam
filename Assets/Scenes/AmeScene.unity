@@ -1013,6 +1013,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651112230}
   m_CullTransparentMesh: 1
+--- !u!1 &670781219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 670781222}
+  - component: {fileID: 670781221}
+  - component: {fileID: 670781220}
+  m_Layer: 0
+  m_Name: testmanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &670781220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670781219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cccdfb6774bf795479e37f6e56ffc040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &670781221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670781219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f56c16c61e7df4e9ad8dd133f24763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &670781222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670781219}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.64133656, y: 0.5052695, z: 2.117914}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &675408724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1216,9 @@ MonoBehaviour:
   mainTheme: {fileID: 8300000, guid: 12673042e6448f245ab357b8039492c3, type: 3}
   goodVariation: {fileID: 8300000, guid: 1399ef84e81611945add33eda78b3200, type: 3}
   badVariation: {fileID: 8300000, guid: 23f3ed0974f391241bce3954fd2185aa, type: 3}
+  fadeDuration: 1
+  maxVolume: 0.5
+  fadeStartVolume: 0.1
 --- !u!1 &679890911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3100,3 +3160,4 @@ SceneRoots:
   - {fileID: 2087969877}
   - {fileID: 142176768}
   - {fileID: 675408726}
+  - {fileID: 670781222}
