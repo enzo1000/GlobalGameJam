@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         panelRectTransform = panelToToggle.GetComponent<RectTransform>();
-        playerManager = FindObjectOfType<PlayerManager>(); // a voir si y a pas un meilleur moyen pour le trouver
+        playerManager = FindFirstObjectByType<PlayerManager>(); // a voir si y a pas un meilleur moyen pour le trouver
     }
 
     void Update()
@@ -33,8 +33,8 @@ public class UIManager : MonoBehaviour
         // pour les textes
         if (playerManager != null)
         {
-            followersText.text = $"Followers: {playerManager.GetFollowersCount()}";
-            bubblesText.text = $"Bubbles: {playerManager.GetBubbleCount()}";
+            followersText.text = $"{playerManager.GetFollowersCount()}";
+            bubblesText.text = $"{playerManager.GetBubbleCount()}";
         }
 
     }

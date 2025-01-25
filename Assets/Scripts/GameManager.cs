@@ -22,14 +22,37 @@ public class GameManager : MonoBehaviour
     private float timeBetweenNews;
     private float newsProba;
 
+    private DynamicMusicManager musicManager;//Ame pour la musique
+
+
     void Start()
     {
         bubble = new Bubble();
+        musicManager = FindFirstObjectByType<DynamicMusicManager>(); //Ame pour la musique  pas sure que ce soit la bonne méthode deprecated shit
     }
 
     void Update()
     {
-        
+        //__AME TESTS
+        // Test musics delete later
+        if (Input.GetKeyDown(KeyCode.G)) 
+        {
+            if (musicManager != null)
+            {
+                musicManager.PlayGoodVariation();
+                Debug.Log("Playing Good Variation");
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.B)) 
+        {
+            if (musicManager != null)
+            {
+                musicManager.PlayBadVariation();
+                Debug.Log("Playing Bad Variation");
+            }
+        }
+        //AME TESTS__
     }
 
     // [TODO] à équilibrer
@@ -57,12 +80,21 @@ public class GameManager : MonoBehaviour
                 if (action.asExplosed || Random.value <= action.investDanger) // bulle explose
                 {
                     variation *= -1.0f;
+                    if (musicManager != null)
+                    {
+                        musicManager.PlayBadVariation(); // Play bad news variation
+                    }
+
                 }
                 else
                 {
                     if (Random.value >= 1 - action.investDanger) // [TODO] à voir
                     {
                         variation *= -1.0f;
+                        if (musicManager != null)
+                        {
+                            musicManager.PlayGoodVariation(); // Play good news variation
+                        }
                     }
                 }
                 break;
@@ -70,6 +102,10 @@ public class GameManager : MonoBehaviour
                 if (action.asExplosed || Random.value <= action.investDanger) // bulle explose
                 {
                     variation *= -1.0f;
+                    if (musicManager != null)
+                    {
+                        musicManager.PlayBadVariation(); // Play bad news variation
+                    }
                 }
                 break;
             case NewsType.FollowerSell:
