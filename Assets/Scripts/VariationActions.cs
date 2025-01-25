@@ -7,11 +7,14 @@ public class ActionVariation : MonoBehaviour
     public float interval = 5f; // Intervalle en secondes pour chaque variation
     public List<ActionData> actions = new List<ActionData>(); // Liste des actions
 
+    private DynamicMusicManager musicManager;//Ame pour la musique
+
     private float timer;
 
     void Start()
     {
         timer = interval;
+        musicManager = FindFirstObjectByType<DynamicMusicManager>();
     }
 
     void Update()
@@ -42,11 +45,19 @@ public class ActionVariation : MonoBehaviour
             {
                 action.currentValue *= action.crashFactor;
                 Debug.Log($"[{action.name}] Chute/crash ! Nouvelle valeur : {action.currentValue}");
+                if (musicManager != null)
+                {
+                    musicManager.PlayBadVariation(); // Play bad news variation
+                }
             }
             else // Montée en flèche
             {
                 action.currentValue *= action.surgeFactor;
                 Debug.Log($"[{action.name}] Montée en flèche ! Nouvelle valeur : {action.currentValue}");
+                if (musicManager != null)
+                {
+                    musicManager.PlayGoodVariation(); // Play good news variation
+                }
             }
         }
     }
