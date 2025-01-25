@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class ActionScript : MonoBehaviour
 {
     //Scripting Only
-    public float playerInvested { get; set; }   //Number of bubbles invested in the current Action
-    public float currentBubbleValue { get; set; }   //Current cost of the Action with the variations of the Bubbles
+    public float playerInvested = 0;   //Number of bubbles invested in the current Action
+    public float currentBubbleValue;   //Current cost of the Action with the variations of the Bubbles
     private float globalVariation;      //Variation of the action depending of the baseBubbleValue
     public bool asExplosed = false;    //Is the action crashing or not
 
@@ -19,12 +19,12 @@ public class ActionScript : MonoBehaviour
     private string actionSellerName;           //SellerName
     private Sprite actionSellerImage;
 
-    private float baseBubbleValue;         //Base cost of the Action for first appearance and futur variation
+    public float baseBubbleValue;         //Base cost of the Action for first appearance and futur variation
     private float visibilityCooldown;      //The visibility Cooldown of the Action 
     private int availableQuantity;         //Numbers of action buyable
     private float minThreshold;            //???
     private float maxThreshold;            //???
-    private float speculativeBubbleChance; //A percent of chances for the Action to crash
+    public float speculativeBubbleChance; //A percent of chances for the Action to crash
 
     //UI
     public GameObject UI_actionName;
