@@ -15,6 +15,7 @@ public class Bubble
         shellValue = shellValue + GaussianRandom(stdDev);
     }
 
+    // [TODO] à équilibrer
     public static float GaussianRandom(float stdDev)
     {
         float u1 = Random.value;

@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+public enum Order
+{
+    Buy,
+    Sell
+}
+
 public class PlayerManager : MonoBehaviour
 {
     public float shellNumber { get; set; }
     private float bubbleNumber;
     private List<Follower> followers = new List<Follower>();
-    // private Dictionary<Action, int> actions = new Dictionary<Action, int>();
-    private int selectedAction;
+    private Dictionary<ActionScript, int> actions = new Dictionary<ActionScript, int>();
+    private ActionScript selectedAction;
 
     private void Start()
     {
@@ -17,12 +23,7 @@ public class PlayerManager : MonoBehaviour
         bubbleNumber = 500.0f;
     }
 
-    /*public void OnSwitchSelectedAction(Action newAction)
-    {
-        selectedAction = newAction;
-    }*/
-
-    /*public void OnBuyAction(Action action, int quantity)
+    public void OnBuyAction(ActionScript action, int quantity)
     {
         if (quantity * action.currentBubbleValue < bubbleNumber)
         {
@@ -31,19 +32,55 @@ public class PlayerManager : MonoBehaviour
             else
                 actions.Add(action, quantity);
                
-            action.playerInvest += quantity * action.currentBubbleValue;
-            action.availableQuantity -= quantity;
+            action.playerInvested += quantity * action.currentBubbleValue;
         }
-    }*/
+    }
 
-    /*public void OnSellAction(Action action, int quantity)
+    public void OnSellAction(ActionScript action, int quantity)
     {
+        if (!actions.ContainsKey(action) || actions[action] < quantity)
+            return;
+
         bubbleNumber += quantity * action.currentBubbleValue;
-        actions.Remove(action);
-    }*/
+        actions[action] -= quantity;
+        if (actions[action] <= 0)
+            actions.Remove(action);
+    }
 
-    public void OnCreatePost()
+    // lancer des corroutines pour le faire dans le temps
+    public void OnCreatePost(ActionScript action, Order order, float announcedRisk)
     {
+        if (order == Order.Buy)
+        {
+            float participationProbability = computeParticipationProbability(action, announcedRisk);
+            foreach(var follower in followers)
+            {
+                if(Random.value <= participationProbability)
+                    follower.Buy(action);
+            }
+        }
+        if (order == Order.Sell)
+        {
+            foreach(var follower in followers)
+            {
+                if(follower.actions.Contains(action))
+                {
+                    follower.Sell(action, this);
+                }
+            }
+        }
 
+    }
+
+    // [TODO] à équilibrer
+    private float computeParticipationProbability(ActionScript action, float announcedRisk)
+    {
+        return .5f;
+    }
+
+    public void earnFollowers(int value)
+    {
+        for (int i = 0; i < value; i++)
+            followers.Add(new Follower());
     }
 }
