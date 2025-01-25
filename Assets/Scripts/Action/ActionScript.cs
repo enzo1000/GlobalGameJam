@@ -21,7 +21,6 @@ public class ActionScript : MonoBehaviour
 
     public float baseBubbleValue;         //Base cost of the Action for first appearance and futur variation
     private float visibilityCooldown;      //The visibility Cooldown of the Action 
-    private int availableQuantity;         //Numbers of action buyable
     private float minThreshold;            //???
     private float maxThreshold;            //???
     public float speculativeBubbleChance; //A percent of chances for the Action to crash
@@ -69,5 +68,17 @@ public class ActionScript : MonoBehaviour
     public void OpenCanvaButton(GameObject canva, bool active)
     {
         canva.SetActive(active);
+    }
+
+    public void UpdateBubbleValue(float variation)
+    {
+        currentBubbleValue = currentBubbleValue + (currentBubbleValue * variation);
+        UpdateSpeculativeBubbleChance();
+    }
+
+    // [TODO] à équilibrer
+    public void UpdateSpeculativeBubbleChance()
+    {
+
     }
 }
