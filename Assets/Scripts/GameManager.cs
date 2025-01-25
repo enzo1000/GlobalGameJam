@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum NewsType
@@ -11,16 +12,21 @@ public enum NewsType
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] NewsScriptableObject newsData;
+    [SerializeField] GameObject newsPrefab;
+
     private Bubble bubble;
-    private PlayerManager player;
+    private float bubbleTimer = 0.0f;
+
+    [SerializeField] private PlayerManager player;
 
     private float victoryGoal;
     List<ActionScript> visibleActions = new List<ActionScript>();
 
-    private float newsTimer;
+    private float newsTimer = 0.0f;
     // [TODO] à équilibrer
-    private float timeBetweenNews;
-    private float newsProba;
+    private float timeBetweenNews = 10.0f;
+    private float newsProba = 0.5f;
 
     void Start()
     {
@@ -29,7 +35,33 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+        // condition de victoire
+        if (player.shellNumber >= victoryGoal)
+            Debug.Log("GG tu as gagne un milleTplat + cul de la cadreuse");
+
+        // cours de la bubble
+        bubbleTimer += Time.deltaTime;
+        if(bubbleTimer >= 1.0f)
+        {
+            bubbleTimer = 0.0f;
+            bubble.UpdateValue();
+        }
+
+
+        // apparition des news naturelles
+        newsTimer += Time.deltaTime;
+        if(newsTimer >= timeBetweenNews)
+        {
+            newsTimer = 0.0f;
+            if(Random.value < newsProba)
+            {
+                if(player.actions.Count > 0)
+                {
+                    ActionScript action = player.actions.ElementAt(Random.Range(0, player.actions.Count)).Key;
+                    SummonNews(action, NewsType.NaturalEvent);
+                }
+            }
+        }
     }
 
     // [TODO] à équilibrer
@@ -78,6 +110,10 @@ public class GameManager : MonoBehaviour
             default:
                 return;
         }
+
+        NewsScript news = Instantiate(newsPrefab).GetComponent<NewsScript>();
+        news.InitData(Random.Range(0, newsData.newsParamList.Count));
+        news.UpdateAction(action, variation);
     }
 
     // [TODO] à équilibrer

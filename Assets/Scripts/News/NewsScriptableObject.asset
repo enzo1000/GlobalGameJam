@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newsParamList:
   - newsName: Y in shambles
-    newsSellerName: Elon Crust
     newsDescription: Elon Crust did the crab sign. The Y market is in shamble
-    newsSpriteAnnouncer: {fileID: -5412910156287300836, guid: fed4ac3d53af55a4599d1d3b70eaee9f, type: 3}
+    newsVariation: 73
+  - newsName: Y in shambles
+    newsDescription: Elon Crust did the crab sign. The Y market is in shamble
     newsVariation: 73
