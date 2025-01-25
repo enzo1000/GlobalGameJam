@@ -7,7 +7,9 @@ public struct actionParam
 {
     [SerializeField]
     public string actionName;
-    public string actionSeller;
+    [SerializeField]
+    public Sprite actionSellerImage;
+    public string actionSellerName;
     public float baseBubbleValue;         //Base cost of the Action for first appearance and futur variation
     public float visibilityCooldown;      //The visibility Cooldown of the Action 
     public int availableQuantity;         //Numbers of action buyable
