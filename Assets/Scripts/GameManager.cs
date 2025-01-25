@@ -49,25 +49,25 @@ public class GameManager : MonoBehaviour
 
     public void SummonNews(ActionScript action, NewsType type)
     {
-        float variation = computeVariationValue(action.speculativeBubbleChance);
+        float variation = computeVariationValue(action.investDanger);
 
         switch(type)
         {
             case NewsType.NaturalEvent:
-                if (action.asExplosed || Random.value <= action.speculativeBubbleChance) // bulle explose
+                if (action.asExplosed || Random.value <= action.investDanger) // bulle explose
                 {
                     variation *= -1.0f;
                 }
                 else
                 {
-                    if (Random.value >= 1 - action.speculativeBubbleChance) // [TODO] à voir
+                    if (Random.value >= 1 - action.investDanger) // [TODO] à voir
                     {
                         variation *= -1.0f;
                     }
                 }
                 break;
             case NewsType.FollowerBuy:
-                if (action.asExplosed || Random.value <= action.speculativeBubbleChance) // bulle explose
+                if (action.asExplosed || Random.value <= action.investDanger) // bulle explose
                 {
                     variation *= -1.0f;
                 }

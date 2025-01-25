@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class ActionScript : MonoBehaviour
 {
     //Scripting Only
-    private float playerInvested = 0;   //Number of bubbles invested in the current Action
+    public float playerInvested = 0f;   //Number of bubbles invested in the current Action
     private float informationRiskRate = 20f;
+    public bool asExplosed = false;
 
     public ActionScriptableObject ASO;
     public int ASOIndex = 0;
@@ -24,8 +25,10 @@ public class ActionScript : MonoBehaviour
 
     //Second Panel
     private string actionDescription;
+    public int currentBubbleValue;
+    public int baseBubbleValue;
     private int initialActionStock;
-    private float investDanger;         //A percent of chances for the Action to crash
+    public float investDanger;          //A percent of chances for the Action to crash
 
     //UI
     [Header("First Panel")]
@@ -70,7 +73,7 @@ public class ActionScript : MonoBehaviour
 
         UI_actionDescription.GetComponent<TMP_Text>().text = actionDescription;
         UI_actionName2.GetComponent<TMP_Text>().text = actionName;
-        UI_currentActionCost.GetComponent<TMP_Text>().text = initialActionCost.ToString();
+        currentBubbleValue = baseBubbleValue;
         UI_initialActionStock.GetComponent<TMP_Text>().text = "(" + initialActionStock.ToString() + ")";
         UI_investDanger.GetComponent<TMP_Text>().text = investDanger.ToString() + "%";
 
@@ -87,6 +90,7 @@ public class ActionScript : MonoBehaviour
 
         //Second Panel
         UI_Timer2.GetComponent<TMP_Text>().text = visibilityCooldown.ToString();
+        UI_currentActionCost.GetComponent<TMP_Text>().text = currentBubbleValue.ToString();
 
         //Third Panel
         UI_Timer3.GetComponent<TMP_Text>().text = visibilityCooldown.ToString();
