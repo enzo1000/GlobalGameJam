@@ -3,16 +3,23 @@ using UnityEngine;
 
 public class Bubble
 {
+    [SerializeField] GraphHandler graphHandler;
+
     public float shellValue { get; set; }
 
     float delta = 0.25f;
     float dt = 0.1f;
 
+    int compteur = 0;
+
     public void UpdateValue()
     {
+        compteur += 1;
         float stdDev = delta * delta * dt;
         // stdDev *= Random.value * 2;
         shellValue = shellValue + GaussianRandom(stdDev);
+        graphHandler.CreatePoint(new Vector2(compteur, shellValue));
+        graphHandler.UpdateGraph();
     }
 
     // [TODO] à équilibrer
