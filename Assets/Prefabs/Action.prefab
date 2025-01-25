@@ -1033,8 +1033,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61359488336a1e42bd2b86d472ed8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInvested: 0
+  asExplosed: 0
   ASO: {fileID: 11400000, guid: 56e096df41c2fd84f9589e4d279c5c67, type: 2}
   ASOIndex: 0
+  currentBubbleValue: 0
+  baseBubbleValue: 0
+  investDanger: 0
   UI_actionName: {fileID: 5848574314064879783}
   UI_actionSellerName: {fileID: 9115401379302867716}
   UI_actionSellerImage: {fileID: 7160437969380113092}
