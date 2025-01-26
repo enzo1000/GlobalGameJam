@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.UI;
 
 
 public class VariationActions : MonoBehaviour
@@ -17,6 +18,9 @@ public class VariationActions : MonoBehaviour
     public GameObject UI_newsName;
     public GameObject UI_newsDescription;
     public GameObject UI_newsVariation;
+
+    public GameObject UI_news;
+    private List<newsParam> newsToShow = new List<newsParam>();
 
     private float timer;
 
@@ -74,31 +78,53 @@ public class VariationActions : MonoBehaviour
     }
 
 
-
-
     public void SetNews(string actionName, float newsVariation)
     {
+        Debug.Log("NEEEEEEEWS" + actionName);
+
+
         foreach (var news in newsScriptableObject.newsParamList)
         {
             if (news.newsName == actionName)
             {
-                UI_newsName.GetComponent<TMP_Text>().text = actionName;
-                UI_newsDescription.GetComponent<TMP_Text>().text = news.newsDescription;
-                UI_newsVariation.GetComponent<TMP_Text>().text = newsVariation.ToString();
+                if (newsToShow.Count >= 5)
+                    newsToShow.RemoveAt(0);
 
-                Debug.Log($"News : {actionName} - {news.newsDescription} - {newsVariation}");
+                newsToShow.Add(news);
+
+                UpdateNewsUI();
                 return;
             }
         }
-        //test de secours a enlever
-        UI_newsName.GetComponent<TMP_Text>().text = actionName;
-        UI_newsDescription.GetComponent<TMP_Text>().text = "aaaaaaaaaaa";
-        UI_newsVariation.GetComponent<TMP_Text>().text = newsVariation.ToString();
-        Debug.Log($"News : {actionName} - {"aaaaaaaaa"} - {newsVariation}");
     }
 
+    private void UpdateNewsUI()
+    {
+        List<GameObject> GO_UInews = new List<GameObject>();
+        foreach(Transform t in UI_news.transform)
+        {
+            GO_UInews.Add(t.gameObject);
+        }
 
-
+        for(int i = 0; i < GO_UInews.Count; i++)
+        {
+            if(newsToShow.Count > i)
+            {
+                GO_UInews[i].GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.1f);
+                TMP_Text[] texts = GO_UInews[i].GetComponentsInChildren<TMP_Text>();
+                texts[0].text = newsToShow[i].newsName;
+                texts[1].text = newsToShow[i].newsDescription;
+                // texts[2].text = newsToShow[i].newsVariation.ToString();
+            }
+            else
+            {
+                TMP_Text[] texts = GO_UInews[i].GetComponentsInChildren<TMP_Text>();
+                texts[0].text = "";
+                texts[1].text = "";
+                texts[2].text = "";
+            }
+        }
+    }
 
     public void AdjustActionRisks(string actionName, float newSlightFluctuationChance, float newCrashChance)
     {
