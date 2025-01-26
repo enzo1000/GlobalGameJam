@@ -793,6 +793,11 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &395858785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2596183824947931901, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+  m_PrefabInstance: {fileID: 1002108561}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &543971825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,7 +1282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5921aba280eb964783d9f2dfd68b293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 5
+  interval: 2
   actions:
   - name: sel
     currentValue: 100
@@ -1293,6 +1298,10 @@ MonoBehaviour:
     surgeFactor: 1.5
     slightFluctuationChance: 90
     crashChance: 3.6
+  newsScriptableObject: {fileID: 11400000, guid: d69f79bd7ab1fda4498d890645ca81eb, type: 2}
+  UI_newsName: {fileID: 1158982034}
+  UI_newsDescription: {fileID: 395858785}
+  UI_newsVariation: {fileID: 2132809707}
 --- !u!1 &675408724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2469,6 +2478,11 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1158982034 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8587084671188775746, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+  m_PrefabInstance: {fileID: 1002108561}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1170895199
 GameObject:
   m_ObjectHideFlags: 0
@@ -3948,6 +3962,11 @@ MonoBehaviour:
   panelToToggle: {fileID: 1170895199}
   followersText: {fileID: 1502666531}
   bubblesText: {fileID: 1455136113}
+--- !u!1 &2132809707 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7676264322849323099, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+  m_PrefabInstance: {fileID: 1002108561}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
