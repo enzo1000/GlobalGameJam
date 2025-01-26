@@ -2246,7 +2246,7 @@ MonoBehaviour:
   - index: 0
     sfxClip: {fileID: 8300000, guid: 71e4c8fd7f971234bb16199b44920113, type: 3}
   - index: 1
-    sfxClip: {fileID: 8300000, guid: c16eb3f731aab8d42ac15a8ac1fb19ee, type: 3}
+    sfxClip: {fileID: 8300000, guid: 70b98c3aafc9b0549a28b5dce64e4859, type: 3}
   - index: 2
     sfxClip: {fileID: 8300000, guid: e5ebbe887e430324c88c378cc70311a4, type: 3}
   - index: 3
@@ -2254,9 +2254,9 @@ MonoBehaviour:
   - index: 4
     sfxClip: {fileID: 8300000, guid: 6619831d15f31eb47806617b8f89a413, type: 3}
   - index: 5
-    sfxClip: {fileID: 8300000, guid: 70b98c3aafc9b0549a28b5dce64e4859, type: 3}
-  - index: 6
     sfxClip: {fileID: 8300000, guid: 503c904c934356b4aaaca23ad015a283, type: 3}
+  - index: 6
+    sfxClip: {fileID: 8300000, guid: c16eb3f731aab8d42ac15a8ac1fb19ee, type: 3}
   - index: 7
     sfxClip: {fileID: 8300000, guid: 71e4c8fd7f971234bb16199b44920113, type: 3}
   mainTheme: {fileID: 8300000, guid: 12673042e6448f245ab357b8039492c3, type: 3}
