@@ -176,17 +176,6 @@ public class GameManager : MonoBehaviour
         return variation;
     }
 
-    public void OnClickManageActions()
-    {
-        canvasGestionActions.SetActive(true);
-        canvasInterfaceBase.SetActive(false);
-    }
-    public void OnClickBackButton()
-    {
-        canvasInterfaceBase.SetActive(true);
-        canvasGestionActions.SetActive(false);
-    }
-
     public void EndGame()
     {
         if (player.shellNumber >= victoryGoal)
