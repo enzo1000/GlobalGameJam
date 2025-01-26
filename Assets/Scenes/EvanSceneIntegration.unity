@@ -255,54 +255,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17896620}
   m_CullTransparentMesh: 1
---- !u!1 &28914482
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 28914484}
-  - component: {fileID: 28914483}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &28914483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28914482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8f56c16c61e7df4e9ad8dd133f24763, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newsData: {fileID: 0}
-  newsPrefab: {fileID: 0}
-  bubble: {fileID: 1794824705}
-  player: {fileID: 1324291355}
---- !u!4 &28914484
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28914482}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7706503, y: 3.7965903, z: -2.330009}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &142176765
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,9 +647,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1803535517656612335, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803535517656612335, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803535517656612335, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2985753411922737020, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3511595992073298168, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
       propertyPath: m_Name
       value: News Panel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511595992073298168, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516307536911090292, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116782589375049224, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1218,8 +1198,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newsData: {fileID: 0}
   newsPrefab: {fileID: 0}
-  bubble: {fileID: 0}
-  player: {fileID: 0}
+  actionSpawnZone: {fileID: 0}
+  actionPrefab: {fileID: 0}
+  bubble: {fileID: 1794824705}
+  player: {fileID: 670781220}
 --- !u!4 &670781222
 Transform:
   m_ObjectHideFlags: 0
@@ -1267,6 +1249,7 @@ MonoBehaviour:
   UI_newsName: {fileID: 1158982034}
   UI_newsDescription: {fileID: 395858785}
   UI_newsVariation: {fileID: 2132809707}
+  UI_news: {fileID: 1649238469}
 --- !u!1 &675408724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,9 +1687,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1803535517656612335, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803535517656612335, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803535517656612335, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2985753411922737020, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3511595992073298168, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
       propertyPath: m_Name
       value: News Panel (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511595992073298168, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516307536911090292, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116782589375049224, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1806,9 +1817,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1803535517656612335, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803535517656612335, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803535517656612335, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2985753411922737020, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3511595992073298168, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
       propertyPath: m_Name
       value: News Panel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511595992073298168, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516307536911090292, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116782589375049224, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2116,9 +2155,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1803535517656612335, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803535517656612335, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803535517656612335, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2985753411922737020, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3511595992073298168, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
       propertyPath: m_Name
       value: News Panel (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511595992073298168, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516307536911090292, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116782589375049224, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2353,6 +2420,10 @@ PrefabInstance:
     - target: {fileID: 3511595992073298168, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
       propertyPath: m_Name
       value: News Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516307536911090292, guid: c8779161e8b34024eba6ea00beb1e72d, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2602,50 +2673,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188670030}
   m_CullTransparentMesh: 1
---- !u!1 &1324291354
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1324291356}
-  - component: {fileID: 1324291355}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1324291355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324291354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cccdfb6774bf795479e37f6e56ffc040, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1324291356
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324291354}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7706503, y: 3.7965903, z: -2.330009}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1447132238
 GameObject:
   m_ObjectHideFlags: 0
@@ -4038,5 +4065,3 @@ SceneRoots:
   - {fileID: 675408726}
   - {fileID: 670781222}
   - {fileID: 1794824704}
-  - {fileID: 28914484}
-  - {fileID: 1324291356}
