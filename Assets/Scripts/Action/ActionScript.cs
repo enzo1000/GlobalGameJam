@@ -66,6 +66,11 @@ public class ActionScript : MonoBehaviour
         InitThirdPanel();
     }
 
+    public int VendorIndex
+    {
+        get => vendorIndex;
+    }
+
     private void Update()
     {
         //First Panel

@@ -1,11 +1,17 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DynamicMusicManager : MonoBehaviour
 {
-    public AudioSource audioSource; 
+    public AudioSource audioSource;
+    public AudioSource sfxSource; // AudioSource for sound effects
+    public List<CharacterSFX> characterSFXList;
+
     public AudioClip mainTheme; // Main theme music
     public AudioClip goodVariation; // Good variation music
     public AudioClip badVariation; // Bad variation music
+
+    
 
     public float fadeDuration = 1.0f; // Duration for fade-out and fade-in
     public float maxVolume = 0.5f; // Maximum volume a voir si on doit pas changer la logique pour les paramètres
@@ -26,6 +32,21 @@ public class DynamicMusicManager : MonoBehaviour
         audioSource.loop = true;
         audioSource.volume = maxVolume;
         audioSource.Play();
+    }
+
+    public void PlayActionSpawnSfx(int index)
+    {
+        // Search for the matching character SFX in the list
+        foreach (var characterSFX in characterSFXList)
+        {
+            if (characterSFX.index == index)
+            {
+                sfxSource.PlayOneShot(characterSFX.sfxClip);
+                Debug.Log("Playing SFX for character " + index);
+                return; // Exit once the correct sound is played
+            }
+        }
+
     }
 
     public void PlayGoodVariation()
@@ -104,4 +125,12 @@ public class DynamicMusicManager : MonoBehaviour
 
         audioSource.volume = maxVolume;
     }
+}
+
+
+[System.Serializable]
+public class CharacterSFX
+{
+    public int index;
+    public AudioClip sfxClip; // The sound effect associated with this character
 }

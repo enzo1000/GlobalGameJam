@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -58,7 +59,7 @@ public class GameManager : MonoBehaviour
             bubbleTimer = 0.0f;
             bubble.UpdateValue();
         }
-        if (actionTimer >= 1.0f)
+        if (actionTimer >= 4.0f)
         {
             actionTimer = 0.0f;
             spawnAction();
@@ -74,6 +75,24 @@ public class GameManager : MonoBehaviour
         GameObject action = Instantiate(actionPrefab, spawnPoint, Quaternion.identity);
         action.transform.parent = GameObject.Find("ActionList").transform;
         action.transform.localScale = new Vector3(1, 1, 1);
+
+        // ici mettre le son de spawn de l'action lie au personnage recuperer le nomm et activer son X si perso X son Y si perso Y dans l'audiosource 2 
+        // Get the ActionScript from the instantiated action
+        ActionScript actionScript = action.GetComponent<ActionScript>();
+
+        // Play the sound for the specific character
+        //musicManager.PlayActionSpawnSfx(actionScript.VendorIndex);
+        StartCoroutine(PlaySoundAfterDelay(action));
+        Debug.Log("Action spawned");
+    }
+
+    private IEnumerator PlaySoundAfterDelay(GameObject action) //pire systeme ever mais ca marche
+    {
+        yield return new WaitForSeconds(0.2f); // Attendre 0.2 secondes
+        ActionScript actionScript = action.GetComponent<ActionScript>();
+        musicManager.PlayActionSpawnSfx(actionScript.VendorIndex);
+        
+        
     }
 
     // [TODO] à équilibrer
