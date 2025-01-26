@@ -26,7 +26,7 @@ public class Follower : MonoBehaviour
         } 
         else if (action.currentBubbleValue >= action.baseBubbleValue + (action.baseBubbleValue * 15 / 100)) // [TODO] à équilibrer
         {
-            playerManager.earnFollowers(computeNewFollower(action.speculativeBubbleChance));
+            playerManager.earnFollowers(computeNewFollower(action.investDanger));
         }
     }
 

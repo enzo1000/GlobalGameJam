@@ -38,16 +38,7 @@ public class NewsScript : MonoBehaviour
     {
         
     }
-
-    public void UpdateAction(ActionScript action, float variation)
-    {
-        // [ToDo] a corriger
-        newsVariation = variation;
-        UI_newsVariation.GetComponent<TMP_Text>().text = newsVariation.ToString();
-
-        action.UpdateBubbleValue(newsVariation);
-    }
-
+    
     public void InitData(int idx)
     {
         NSOindex = idx;

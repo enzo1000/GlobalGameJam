@@ -83,4 +83,16 @@ public class PlayerManager : MonoBehaviour
         for (int i = 0; i < value; i++)
             followers.Add(new Follower());
     }
+
+    //AME pour l'ui
+    public int GetFollowersCount()
+    {
+        return followers.Count;
+    }
+
+    //AME pour l'ui
+    public float GetBubbleCount()
+    {
+        return bubbleNumber;
+    }
 }

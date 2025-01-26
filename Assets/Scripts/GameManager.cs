@@ -24,17 +24,41 @@ public class GameManager : MonoBehaviour
     List<ActionScript> visibleActions = new List<ActionScript>();
 
     private float newsTimer = 0.0f;
-    // [TODO] à équilibrer
+    // [TODO] Ã  Ã©quilibrer
     private float timeBetweenNews = 10.0f;
     private float newsProba = 0.5f;
+
+    private DynamicMusicManager musicManager;//Ame pour la musique
+
 
     void Start()
     {
         bubble = new Bubble();
+        musicManager = FindFirstObjectByType<DynamicMusicManager>(); //Ame pour la musique  pas sure que ce soit la bonne mÃ©thode deprecated shit
     }
 
     void Update()
     {
+        //__AME TESTS
+        // Test musics delete later
+        if (Input.GetKeyDown(KeyCode.G)) 
+        {
+            if (musicManager != null)
+            {
+                musicManager.PlayGoodVariation();
+                Debug.Log("Playing Good Variation");
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.B)) 
+        {
+            if (musicManager != null)
+            {
+                musicManager.PlayBadVariation();
+                Debug.Log("Playing Bad Variation");
+            }
+        }
+        //AME TESTS__
         // condition de victoire
         if (player.shellNumber >= victoryGoal)
             Debug.Log("GG tu as gagne un milleTplat + cul de la cadreuse");
@@ -46,31 +70,15 @@ public class GameManager : MonoBehaviour
             bubbleTimer = 0.0f;
             bubble.UpdateValue();
         }
-
-
-        // apparition des news naturelles
-        newsTimer += Time.deltaTime;
-        if(newsTimer >= timeBetweenNews)
-        {
-            newsTimer = 0.0f;
-            if(Random.value < newsProba)
-            {
-                if(player.actions.Count > 0)
-                {
-                    ActionScript action = player.actions.ElementAt(Random.Range(0, player.actions.Count)).Key;
-                    SummonNews(action, NewsType.NaturalEvent);
-                }
-            }
-        }
     }
 
-    // [TODO] à équilibrer
+    // [TODO] Ã  Ã©quilibrer
     public void UpdateTimeBetweenNews(float nbFollowers)
     {
 
     }
 
-    // [TODO] à équilibrer
+    // [TODO] Ã  Ã©quilibrer
     public void UpdateNewProba(float nbFollowers)
     {
 
@@ -81,27 +89,40 @@ public class GameManager : MonoBehaviour
 
     public void SummonNews(ActionScript action, NewsType type)
     {
-        float variation = computeVariationValue(action.speculativeBubbleChance);
+        float variation = computeVariationValue(action.investDanger);
 
         switch(type)
         {
             case NewsType.NaturalEvent:
-                if (action.asExplosed || Random.value <= action.speculativeBubbleChance) // bulle explose
+                if (action.asExplosed || Random.value <= action.investDanger) // bulle explose
                 {
                     variation *= -1.0f;
+                    if (musicManager != null)
+                    {
+                        musicManager.PlayBadVariation(); // Play bad news variation
+                    }
+
                 }
                 else
                 {
-                    if (Random.value >= 1 - action.speculativeBubbleChance) // [TODO] à voir
+                    if (Random.value >= 1 - action.investDanger) // [TODO] Ã  voir
                     {
                         variation *= -1.0f;
+                        if (musicManager != null)
+                        {
+                            musicManager.PlayGoodVariation(); // Play good news variation
+                        }
                     }
                 }
                 break;
             case NewsType.FollowerBuy:
-                if (action.asExplosed || Random.value <= action.speculativeBubbleChance) // bulle explose
+                if (action.asExplosed || Random.value <= action.investDanger) // bulle explose
                 {
                     variation *= -1.0f;
+                    if (musicManager != null)
+                    {
+                        musicManager.PlayBadVariation(); // Play bad news variation
+                    }
                 }
                 break;
             case NewsType.FollowerSell:
@@ -116,7 +137,7 @@ public class GameManager : MonoBehaviour
         news.UpdateAction(action, variation);
     }
 
-    // [TODO] à équilibrer
+    // [TODO] Ã  Ã©quilibrer
     private float computeVariationValue(float speculativeBubbleChance)
     {
         float variation = 1f;
