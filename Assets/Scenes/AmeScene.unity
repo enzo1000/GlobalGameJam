@@ -2032,7 +2032,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedActionObject: {fileID: 0}
-  listActionScript: []
 --- !u!114 &670781221
 MonoBehaviour:
   m_ObjectHideFlags: 0
