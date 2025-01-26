@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public enum NewsType
@@ -13,6 +14,10 @@ public enum NewsType
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] GameObject BG;
+    [SerializeField] GameObject Winn;
+    [SerializeField] GameObject Lose;
+
     [Header("Interface")]
     public GameObject canvasInterfaceBase;
     public GameObject canvasGestionActions;
@@ -174,8 +179,15 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         if (player.shellNumber >= victoryGoal)
+        {
             Debug.Log("GG tu as gagne un milleTplat + cul de la cadreuse");
+            BG.SetActive(false);
+            Winn.SetActive(true);
+            string score = ((int)player.shellNumber).ToString();
+            Winn.GetComponentInChildren<TMP_Text>().text = score + " / " + victoryGoal.ToString();
+        }
         else
+        {
             Debug.Log(
                 "\r\neya tsu tsa paveri paveron" +
                 "\r\nlantic ta deli landing standoun" +
@@ -193,5 +205,10 @@ public class GameManager : MonoBehaviour
                 "\r\nBadageda gedageda ya de dou dou" +
                 "\r\nde ya do"
             );
+            BG.SetActive(false);
+            Lose.SetActive(true);
+            string score = ((int)player.shellNumber).ToString();
+            Lose.GetComponentInChildren<TMP_Text>().text = score + " / " + victoryGoal.ToString();
+        }
     }
 }
