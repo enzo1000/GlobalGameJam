@@ -791,11 +791,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1955402233671376406, guid: 289f192a8ee41d5488ed8bd2acba49be, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -426
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1955402233671376406, guid: 289f192a8ee41d5488ed8bd2acba49be, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 244
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1955402233671376406, guid: 289f192a8ee41d5488ed8bd2acba49be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -812,6 +812,10 @@ PrefabInstance:
     - target: {fileID: 2569168550583345775, guid: 289f192a8ee41d5488ed8bd2acba49be, type: 3}
       propertyPath: m_Name
       value: BubbleGraph
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361664799394891727, guid: 289f192a8ee41d5488ed8bd2acba49be, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 34
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

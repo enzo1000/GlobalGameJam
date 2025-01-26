@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -35,13 +36,14 @@ public class BubbleGraph : MonoBehaviour
 
         float grapHeight = graphContainer.sizeDelta.y;
         float yMaximum = 30f;
+        float xMinimum = 0.5f;
         float xSize = 25f;
 
         GameObject lastCircleGameObject = null;
         for (int i = 0; i < valueList.Count; i++)
         {
             float xPosition = xSize + i * xSize;
-            float yPosition = (valueList[i] / yMaximum) * grapHeight;
+            float yPosition = (xMinimum + (valueList[i] / yMaximum)) * grapHeight;
 
             GameObject circleGameObject = CreateCircle(new Vector2(xPosition, yPosition));
             if (lastCircleGameObject != null)
@@ -51,7 +53,12 @@ public class BubbleGraph : MonoBehaviour
             lastCircleGameObject = circleGameObject;
         }
 
-        lastValue.text = valueList[valueList.Count - 1].ToString();
+        String text = Round(valueList[valueList.Count - 1], 3).ToString();
+        while(text.Length < 5)
+        {
+            text += "0";
+        }
+        lastValue.text = text;
     }
 
     private void ClearGraph()
@@ -87,5 +94,11 @@ public class BubbleGraph : MonoBehaviour
         float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         if (n < 0) n += 360;
         return n;
+    }
+
+    public static float Round(float value, int digits)
+    {
+        float mult = Mathf.Pow(10.0f, (float)digits);
+        return Mathf.Round(value * mult) / mult;
     }
 }
