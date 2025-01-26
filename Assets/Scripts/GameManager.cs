@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         float randSpawnY = Random.Range(spawnZone.bounds.min.y, spawnZone.bounds.max.y);
         UnityEngine.Vector3 spawnPoint = new Vector3(randSpawnX, randSpawnY, 0);
         GameObject action = Instantiate(actionPrefab, spawnPoint, Quaternion.identity);
-        // Destroy(action, 10.0f);
+        Destroy(action, 10.0f); //TO IMPLEMENT IN PREFAB
         action.transform.parent = GameObject.Find("ActionList").transform;
         action.transform.localScale = new Vector3(1, 1, 1);
 

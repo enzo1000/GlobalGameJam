@@ -88,18 +88,18 @@ public class ActionUse : MonoBehaviour
     {
         numberToSell += 1;
 
-        if (numberToSell > playerManager.actions.ElementAt(currentWindowAction).Key.initialActionStock)
+        if (numberToSell > playerManager.actions.ElementAt(currentWindowAction).Value)
         {
-            numberToSell = playerManager.actions.ElementAt(currentWindowAction).Key.initialActionStock;
+            numberToSell = playerManager.actions.ElementAt(currentWindowAction).Value;
         }
     }
     public void OnClickBigIncrementSellAmount()
     {
         numberToSell += 10;
 
-        if (numberToSell > playerManager.actions.ElementAt(currentWindowAction).Key.initialActionStock)
+        if (numberToSell > playerManager.actions.ElementAt(currentWindowAction).Value)
         {
-            numberToSell = playerManager.actions.ElementAt(currentWindowAction).Key.initialActionStock;
+            numberToSell = playerManager.actions.ElementAt(currentWindowAction).Value;
         }
     }
     public void OnClickDecrementSellAmount()

@@ -264,7 +264,7 @@ public class ActionScript : MonoBehaviour
 
         // Mise à jour des risques pour l'action actuelle
         actionVariation.AdjustActionRisks(actionName, newSlightFluctuationChance, newCrashChance);
-        Debug.Log("Communication");
+        GameObject.Find("testmanager").GetComponent<PlayerManager>().actions.Add(this, initialActionStock);
     }
 
     //To increment / decrement the risk warn value on third panel
