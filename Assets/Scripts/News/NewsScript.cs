@@ -39,6 +39,11 @@ public class NewsScript : MonoBehaviour
         
     }
     
+    public void UpdateAction(ActionScript action, float variation)
+    {
+
+    }
+
     public void InitData(int idx)
     {
         NSOindex = idx;
