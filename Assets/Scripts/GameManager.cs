@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum NewsType
@@ -11,16 +12,21 @@ public enum NewsType
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] NewsScriptableObject newsData;
+    [SerializeField] GameObject newsPrefab;
+
     private Bubble bubble;
-    private PlayerManager player;
+    private float bubbleTimer = 0.0f;
+
+    [SerializeField] private PlayerManager player;
 
     private float victoryGoal;
     List<ActionScript> visibleActions = new List<ActionScript>();
 
-    private float newsTimer;
-    // [TODO] à équilibrer
-    private float timeBetweenNews;
-    private float newsProba;
+    private float newsTimer = 0.0f;
+    // [TODO] Ã  Ã©quilibrer
+    private float timeBetweenNews = 10.0f;
+    private float newsProba = 0.5f;
 
     private DynamicMusicManager musicManager;//Ame pour la musique
 
@@ -28,7 +34,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         bubble = new Bubble();
-        musicManager = FindFirstObjectByType<DynamicMusicManager>(); //Ame pour la musique  pas sure que ce soit la bonne méthode deprecated shit
+        musicManager = FindFirstObjectByType<DynamicMusicManager>(); //Ame pour la musique  pas sure que ce soit la bonne mÃ©thode deprecated shit
     }
 
     void Update()
@@ -53,15 +59,26 @@ public class GameManager : MonoBehaviour
             }
         }
         //AME TESTS__
+        // condition de victoire
+        if (player.shellNumber >= victoryGoal)
+            Debug.Log("GG tu as gagne un milleTplat + cul de la cadreuse");
+
+        // cours de la bubble
+        bubbleTimer += Time.deltaTime;
+        if(bubbleTimer >= 1.0f)
+        {
+            bubbleTimer = 0.0f;
+            bubble.UpdateValue();
+        }
     }
 
-    // [TODO] à équilibrer
+    // [TODO] Ã  Ã©quilibrer
     public void UpdateTimeBetweenNews(float nbFollowers)
     {
 
     }
 
-    // [TODO] à équilibrer
+    // [TODO] Ã  Ã©quilibrer
     public void UpdateNewProba(float nbFollowers)
     {
 
@@ -88,7 +105,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    if (Random.value >= 1 - action.investDanger) // [TODO] à voir
+                    if (Random.value >= 1 - action.investDanger) // [TODO] Ã  voir
                     {
                         variation *= -1.0f;
                         if (musicManager != null)
@@ -114,9 +131,13 @@ public class GameManager : MonoBehaviour
             default:
                 return;
         }
+
+        NewsScript news = Instantiate(newsPrefab).GetComponent<NewsScript>();
+        news.InitData(Random.Range(0, newsData.newsParamList.Count));
+        news.UpdateAction(action, variation);
     }
 
-    // [TODO] à équilibrer
+    // [TODO] Ã  Ã©quilibrer
     private float computeVariationValue(float speculativeBubbleChance)
     {
         float variation = 1f;

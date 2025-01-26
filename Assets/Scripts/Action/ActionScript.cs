@@ -257,5 +257,6 @@ public class ActionScript : MonoBehaviour
     {
         UI_communicationCanva.SetActive(false);
         Debug.Log("Ignore");
+
     }
 }

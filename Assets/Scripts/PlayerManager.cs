@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour
     public float shellNumber { get; set; }
     private float bubbleNumber;
     private List<Follower> followers = new List<Follower>();
-    private Dictionary<ActionScript, int> actions = new Dictionary<ActionScript, int>();
+    public Dictionary<ActionScript, int> actions = new Dictionary<ActionScript, int>();
     private ActionScript selectedAction;
 
     private void Start()
