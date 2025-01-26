@@ -13,53 +13,183 @@ MonoBehaviour:
   m_Name: BasicAction
   m_EditorClassIdentifier: 
   actionParamList:
-  - actionName: "Action n\xB02"
+  - actionName: 'Coral '
     actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
-    actionSellerName: "Sacr\xE9 homar"
+    actionSellerName: 
     visibilityCooldown: 10
-    actionDescription: Le gros tarpet de madame crabe
-    minInitialActionCost: 20
-    maxInitialActionCost: 60
-    initialActionStock: 50
-    minInvestDanger: 10
-    maxInvestDanger: 90
-  - actionName: "Action n\xB02"
+    actionDescription: 
+    minInitialActionCost: 5000
+    maxInitialActionCost: 15000
+    initialActionStock: 100
+    minInvestDanger: 1
+    maxInvestDanger: 10
+    minSkyrocketChance: 5
+    maxSkyrocketChance: 20
+  - actionName: Wrack
     actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
-    actionSellerName: "Sacr\xE9 homar"
+    actionSellerName: 
     visibilityCooldown: 10
-    actionDescription: Le gros tarpet de madame crabe
-    minInitialActionCost: 20
-    maxInitialActionCost: 60
-    initialActionStock: 50
-    minInvestDanger: 10
-    maxInvestDanger: 90
-  - actionName: "Action n\xB02"
+    actionDescription: 
+    minInitialActionCost: 5000
+    maxInitialActionCost: 15000
+    initialActionStock: 100
+    minInvestDanger: 1
+    maxInvestDanger: 10
+    minSkyrocketChance: 5
+    maxSkyrocketChance: 20
+  - actionName: Nuclear
     actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
-    actionSellerName: "Sacr\xE9 homar"
+    actionSellerName: 
     visibilityCooldown: 10
-    actionDescription: Le gros tarpet de madame crabe
-    minInitialActionCost: 20
-    maxInitialActionCost: 60
-    initialActionStock: 50
-    minInvestDanger: 10
-    maxInvestDanger: 90
-  - actionName: "Action n\xB02"
+    actionDescription: 
+    minInitialActionCost: 5000
+    maxInitialActionCost: 15000
+    initialActionStock: 100
+    minInvestDanger: 1
+    maxInvestDanger: 10
+    minSkyrocketChance: 5
+    maxSkyrocketChance: 20
+  - actionName: Anemona
     actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
-    actionSellerName: "Sacr\xE9 homar"
+    actionSellerName: 
     visibilityCooldown: 10
-    actionDescription: Le gros tarpet de madame crabe
-    minInitialActionCost: 20
-    maxInitialActionCost: 60
-    initialActionStock: 20
-    minInvestDanger: 10
-    maxInvestDanger: 90
-  - actionName: "Action n\xB03"
+    actionDescription: 
+    minInitialActionCost: 5000
+    maxInitialActionCost: 15000
+    initialActionStock: 100
+    minInvestDanger: 1
+    maxInvestDanger: 10
+    minSkyrocketChance: 5
+    maxSkyrocketChance: 20
+  - actionName: Salt
     actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
-    actionSellerName: "Sacr\xE9 homar"
+    actionSellerName: 
     visibilityCooldown: 10
-    actionDescription: Le gros tarpet de madame crabe
-    minInitialActionCost: 20
-    maxInitialActionCost: 60
-    initialActionStock: 30
-    minInvestDanger: 10
-    maxInvestDanger: 90
+    actionDescription: 
+    minInitialActionCost: 5000
+    maxInitialActionCost: 15000
+    initialActionStock: 100
+    minInvestDanger: 1
+    maxInvestDanger: 10
+    minSkyrocketChance: 5
+    maxSkyrocketChance: 20
+  - actionName: Oil
+    actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
+    actionSellerName: 
+    visibilityCooldown: 10
+    actionDescription: 
+    minInitialActionCost: 5000
+    maxInitialActionCost: 15000
+    initialActionStock: 100
+    minInvestDanger: 1
+    maxInvestDanger: 10
+    minSkyrocketChance: 5
+    maxSkyrocketChance: 20
+  - actionName: Nautilus
+    actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
+    actionSellerName: 
+    visibilityCooldown: 10
+    actionDescription: 
+    minInitialActionCost: 5000
+    maxInitialActionCost: 15000
+    initialActionStock: 100
+    minInvestDanger: 1
+    maxInvestDanger: 10
+    minSkyrocketChance: 5
+    maxSkyrocketChance: 20
+  - actionName: Sea Cucumber
+    actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
+    actionSellerName: 
+    visibilityCooldown: 10
+    actionDescription: 
+    minInitialActionCost: 5000
+    maxInitialActionCost: 15000
+    initialActionStock: 100
+    minInvestDanger: 1
+    maxInvestDanger: 10
+    minSkyrocketChance: 5
+    maxSkyrocketChance: 20
+  - actionName: Sponge Blob
+    actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
+    actionSellerName: 
+    visibilityCooldown: 10
+    actionDescription: 
+    minInitialActionCost: 5000
+    maxInitialActionCost: 15000
+    initialActionStock: 100
+    minInvestDanger: 1
+    maxInvestDanger: 10
+    minSkyrocketChance: 5
+    maxSkyrocketChance: 20
+  - actionName: Plastic Bottle
+    actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
+    actionSellerName: 
+    visibilityCooldown: 10
+    actionDescription: 
+    minInitialActionCost: 5000
+    maxInitialActionCost: 15000
+    initialActionStock: 100
+    minInvestDanger: 1
+    maxInvestDanger: 10
+    minSkyrocketChance: 5
+    maxSkyrocketChance: 20
+  - actionName: Ice Water
+    actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
+    actionSellerName: 
+    visibilityCooldown: 10
+    actionDescription: 
+    minInitialActionCost: 5000
+    maxInitialActionCost: 15000
+    initialActionStock: 100
+    minInvestDanger: 1
+    maxInvestDanger: 10
+    minSkyrocketChance: 5
+    maxSkyrocketChance: 20
+  - actionName: Urchin
+    actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
+    actionSellerName: 
+    visibilityCooldown: 10
+    actionDescription: 
+    minInitialActionCost: 5000
+    maxInitialActionCost: 15000
+    initialActionStock: 100
+    minInvestDanger: 1
+    maxInvestDanger: 10
+    minSkyrocketChance: 5
+    maxSkyrocketChance: 20
+  - actionName: Squid Ink
+    actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
+    actionSellerName: 
+    visibilityCooldown: 10
+    actionDescription: 
+    minInitialActionCost: 5000
+    maxInitialActionCost: 15000
+    initialActionStock: 100
+    minInvestDanger: 1
+    maxInvestDanger: 10
+    minSkyrocketChance: 5
+    maxSkyrocketChance: 20
+  - actionName: Sand
+    actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
+    actionSellerName: 
+    visibilityCooldown: 10
+    actionDescription: 
+    minInitialActionCost: 5000
+    maxInitialActionCost: 15000
+    initialActionStock: 100
+    minInvestDanger: 1
+    maxInvestDanger: 10
+    minSkyrocketChance: 5
+    maxSkyrocketChance: 20
+  - actionName: Pearl
+    actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
+    actionSellerName: 
+    visibilityCooldown: 10
+    actionDescription: 
+    minInitialActionCost: 5000
+    maxInitialActionCost: 15000
+    initialActionStock: 100
+    minInvestDanger: 1
+    maxInvestDanger: 10
+    minSkyrocketChance: 5
+    maxSkyrocketChance: 20
