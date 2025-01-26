@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: NewsScriptableObject
   m_EditorClassIdentifier: 
   newsParamList:
-  - newsName: Y in shambles
+  - newsName: Chute/crash
     newsDescription: Elon Crust did the crab sign. The Y market is in shamble
     newsVariation: 73
-  - newsName: Y in shambles
+  - newsName: "Mont\xE9e en fl\xE8che"
     newsDescription: Elon Crust did the crab sign. The Y market is in shamble
     newsVariation: 73
