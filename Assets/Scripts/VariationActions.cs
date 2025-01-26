@@ -62,7 +62,7 @@ public class VariationActions : MonoBehaviour
                 {
                     musicManager.PlayBadVariation(); // Play bad news variation
                 }
-                SetNews("Chute/crash", action.crashFactor);
+                SetNews(action.name, action.crashFactor);
             }
             else // Montée en flèche
             {
@@ -72,7 +72,7 @@ public class VariationActions : MonoBehaviour
                 {
                     musicManager.PlayGoodVariation(); // Play good news variation
                 }
-                SetNews("Montée en flèche", action.surgeFactor);
+                SetNews(action.name, action.surgeFactor);
             }
         }
     }

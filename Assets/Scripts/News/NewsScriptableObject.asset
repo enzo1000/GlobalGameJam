@@ -13,9 +13,125 @@ MonoBehaviour:
   m_Name: NewsScriptableObject
   m_EditorClassIdentifier: 
   newsParamList:
-  - newsName: Chute/crash
-    newsDescription: Elon Crust did the crab sign. The Y market is in shamble
+  - newsName: Coral
+    newsDescription: A new vein of red coral has been found ! The exchange rate is
+      growing up !
+    newsVariation: 0
+  - newsName: Coral
+    newsDescription: 'THEY LIED : The news coral veins are fake ! '
     newsVariation: 73
-  - newsName: "Mont\xE9e en fl\xE8che"
-    newsDescription: Elon Crust did the crab sign. The Y market is in shamble
+  - newsName: Wrack
+    newsDescription: An underground worker was injured during the disassembly of
+      a ship. The construction site has been closed
+    newsVariation: 0
+  - newsName: Wrack
+    newsDescription: We discovered a Roman ship graveyard! The value of Wrack is
+      surging!
     newsVariation: 73
+  - newsName: Wrack
+    newsDescription: Wrecked Wrack, soon in theatres ! Don't forget to buy your tickets.
+    newsVariation: 0
+  - newsName: Nuclear
+    newsDescription: 'The "Booming Submarines Motors" stocks are about to bomb, says
+      renowned economist. '
+    newsVariation: 0
+  - newsName: Nuclear
+    newsDescription: Nuclear is blowing up ! Stay alert.
+    newsVariation: 0
+  - newsName: Anemona
+    newsDescription: 'Low quality anemonas are plaguing the market, says researcher.
+      A Name on a Net, first culprit ? '
+    newsVariation: 0
+  - newsName: Anemona
+    newsDescription: 'A Name on a Net net worth just skyrocketed, grab a hold of
+      a share ! '
+    newsVariation: 0
+  - newsName: Salt
+    newsDescription: 'Rocks were always salty ? Politicians question the wisdom of
+      buyers when they could just lick rocks ! '
+    newsVariation: 0
+  - newsName: Salt
+    newsDescription: 'Rocks were always salty ? Politicians question the wisdom of
+      buyers when they could just lick rocks ! '
+    newsVariation: 0
+  - newsName: Oil
+    newsDescription: Oil at a Boiling Point ! Is drilling oil becoming near impossible
+      ?
+    newsVariation: 0
+  - newsName: Oil
+    newsDescription: An oil tanker has sunk near an operating site! Oil stocks are
+      skyrocketing!
+    newsVariation: 0
+  - newsName: Nautilus
+    newsDescription: 'Weather Alert: A starfish storm has caused significant damage
+      to the roads.'
+    newsVariation: 0
+  - newsName: Nautilus
+    newsDescription: A new highway has open to join Crababord Island.
+    newsVariation: 0
+  - newsName: Sea Cucumber
+    newsDescription: Getting high on Sea Cucumber ? More common than you think !
+    newsVariation: 0
+  - newsName: Sea Cucumber
+    newsDescription: Is eating more Sea Cucumber boosting your performance ? The
+      experts say YES !
+    newsVariation: 0
+  - newsName: Sponge Blob
+    newsDescription: Are Sponge Blobs inedible ? It surely seems like it !
+    newsVariation: 0
+  - newsName: Sponge Blob
+    newsDescription: Trusty Krubs finally got its third Star Fish ! Best fast food
+      restaurant in town ?
+    newsVariation: 0
+  - newsName: Plastic Bottle
+    newsDescription: Take your kids of McCap ! This energy drink will shorten their
+      lifespan by a sea level.
+    newsVariation: 0
+  - newsName: Plastic Bottle
+    newsDescription: 'Drink Quizz : Which kind of McCap Energy Drink are you ? Click
+      here to find out now !'
+    newsVariation: 0
+  - newsName: Ice Water
+    newsDescription: 'A titanic ship just sank on an iceberg in the northern hemisphere.
+      Ice water  '
+    newsVariation: 0
+  - newsName: Ice Water
+    newsDescription: 'A titanic ship just sank on an iceberg in the northern hemisphere.
+      Ice water  '
+    newsVariation: 0
+  - newsName: Urchins
+    newsDescription: 'Eels on musk : it smells bad, really bad for the sea urchins
+      !  '
+    newsVariation: 0
+  - newsName: Ice Water
+    newsDescription: 'Is ice water the secret to eternal youth ? It surely seems
+      so ! '
+    newsVariation: 0
+  - newsName: Squid Ink
+    newsDescription: Is squid ink making people blind ? OctoPenny's' users say so
+      !
+    newsVariation: 0
+  - newsName: Squid Ink
+    newsDescription: OctoPenny's and Mr. Fish-East's collab just dropped, already
+      reached 50 million views !
+    newsVariation: 0
+  - newsName: Sand
+    newsDescription: Huge Currents make Sand Castle Construction Buildings Crumble
+      !
+    newsVariation: 0
+  - newsName: Sand
+    newsDescription: Huge Currents make Sand Castle Construction Buildings Crumble
+      !
+    newsVariation: 0
+  - newsName: Sand
+    newsDescription: Huge Currents make Sand Castle Construction Buildings Crumble
+      !
+    newsVariation: 0
+  - newsName: Pearl
+    newsDescription: 'My Grandma Used to Have those Pearls ! Claim Clam : the Fish
+      on the Loose ?'
+    newsVariation: 0
+  - newsName: Pearl
+    newsDescription: 'My Grandma Used to Have those Pearls ! Claim Clam : the Fish
+      on the Loose ?'
+    newsVariation: 0
