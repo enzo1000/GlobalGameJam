@@ -53,7 +53,7 @@ public class ActionUse : MonoBehaviour
                 TMP_Text actionName = childrensPanel[i].GetComponentInChildren<TMP_Text>();
                 name = playerManager.actions.ElementAt(i).Key.actionName;
                 quantity = playerManager.actions.ElementAt(i).Value.ToString();
-                actionName.text = name + "(" + quantity + ")";
+                actionName.text = name;
                 childrensPanel[i].SetActive(true);
                 int index = i;
                 childrensPanel[i].GetComponent<Button>().onClick.AddListener(() => ShowDetails(index, playerManager));
