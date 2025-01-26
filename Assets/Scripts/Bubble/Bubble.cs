@@ -38,6 +38,7 @@ public class Bubble: MonoBehaviour
         }
 
         graph.ShowGraph(lastData);
+
     }
 
     // [TODO] à équilibrer

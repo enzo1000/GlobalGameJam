@@ -43,25 +43,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        //__AME TESTS
-        // Test musics delete later
-        if (Input.GetKeyDown(KeyCode.G)) 
-        {
-            if (musicManager != null)
-            {
-                musicManager.PlayGoodVariation();
-                Debug.Log("Playing Good Variation");
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.B)) 
-        {
-            if (musicManager != null)
-            {
-                musicManager.PlayBadVariation();
-                Debug.Log("Playing Bad Variation");
-            }
-        }
+        
         //AME TESTS__
         // condition de victoire
         /*if (player.shellNumber >= victoryGoal)
