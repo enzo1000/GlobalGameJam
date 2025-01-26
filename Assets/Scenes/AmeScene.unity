@@ -855,7 +855,7 @@ Transform:
   m_GameObject: {fileID: 259656497}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.6, y: -0.2, z: -4500.1055}
+  m_LocalPosition: {x: 41.4, y: 0.5, z: -4500.1055}
   m_LocalScale: {x: 0.5792828, y: 0.50482166, z: 0.5792828}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3498,7 +3498,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Goal : 3000   '
+  m_text: 'Goal : 125000   '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d900c0b3d2a98ad438f922202bba9eb6, type: 2}
   m_sharedMaterial: {fileID: -4850427536075850848, guid: d900c0b3d2a98ad438f922202bba9eb6, type: 2}
@@ -4809,7 +4809,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502666528}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 

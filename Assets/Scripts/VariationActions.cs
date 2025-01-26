@@ -81,11 +81,13 @@ public class VariationActions : MonoBehaviour
             {
                 float variation = Random.Range(-(int)action.slightFluctuation, (int)action.slightFluctuation);
                 action.currentValue += variation;
+                updatePlayerActions(action.name, variation, operation.plus);
                 Debug.Log($"[{action.name}] Fluctuation légère : {variation} -> Nouvelle valeur : {action.currentValue}");
             }
             else if (randomValue <= action.slightFluctuationChance + action.crashChance) // Chute/crash
             {
                 action.currentValue *= action.crashFactor;
+                updatePlayerActions(action.name, action.crashChance, operation.fois);
                 Debug.Log($"[{action.name}] Chute/crash ! Nouvelle valeur : {action.currentValue}");
                 if (musicManager != null)
                 {
@@ -96,6 +98,7 @@ public class VariationActions : MonoBehaviour
             else // Montée en flèche
             {
                 action.currentValue *= action.surgeFactor;
+                updatePlayerActions(action.name, action.surgeFactor, operation.fois);
                 Debug.Log($"[{action.name}] Montée en flèche ! Nouvelle valeur : {action.currentValue}");
                 if (musicManager != null)
                 {

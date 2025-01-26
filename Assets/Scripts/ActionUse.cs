@@ -141,6 +141,9 @@ public class ActionUse : MonoBehaviour
             panel.SetActive(false);
         }
         else
+        {
+            Debug.Log("ShowDetails");
             ShowDetails(currentWindowAction, playerManager);
+        }
     }
 }
