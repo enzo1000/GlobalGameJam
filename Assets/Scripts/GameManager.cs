@@ -134,7 +134,6 @@ public class GameManager : MonoBehaviour
 
         NewsScript news = Instantiate(newsPrefab).GetComponent<NewsScript>();
         news.InitData(Random.Range(0, newsData.newsParamList.Count));
-        news.UpdateAction(action, variation);
     }
 
     // [TODO] à équilibrer
