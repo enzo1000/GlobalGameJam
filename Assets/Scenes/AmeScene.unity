@@ -1255,6 +1255,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f56c16c61e7df4e9ad8dd133f24763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newsData: {fileID: 0}
+  newsPrefab: {fileID: 0}
+  bubble: {fileID: 0}
+  player: {fileID: 0}
 --- !u!4 &670781222
 Transform:
   m_ObjectHideFlags: 0

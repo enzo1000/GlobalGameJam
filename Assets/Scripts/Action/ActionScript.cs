@@ -235,7 +235,6 @@ public class ActionScript : MonoBehaviour
         actionVariation.AdjustActionRisks(actionName, newSlightFluctuationChance, newCrashChance);
         Debug.Log("Communication");
 
-        canva.SetActive(false);
     }
 
     //To increment / decrement the risk warn value on third panel
@@ -266,11 +265,13 @@ public class ActionScript : MonoBehaviour
     {
         UI_communicationCanva.SetActive(false);
         Debug.Log("Communication");
+        Destroy(gameObject);
     }
     public void OnClickIgnoreButton()
     {
         UI_communicationCanva.SetActive(false);
         Debug.Log("Ignore");
+        Destroy(gameObject);
 
     }
 }
