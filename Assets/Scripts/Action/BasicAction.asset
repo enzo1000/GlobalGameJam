@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BasicAction
   m_EditorClassIdentifier: 
   actionParamList:
-  - actionName: 'Coral '
+  - actionName: Coral
     actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
     actionSellerName: 
     visibilityCooldown: 10

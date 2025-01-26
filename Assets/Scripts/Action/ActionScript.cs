@@ -64,7 +64,6 @@ public class ActionScript : MonoBehaviour
     private void Start()
     {
         ASOIndex = Mathf.RoundToInt(Random.Range(0, ASO.actionParamList.Count));
-
         processVendorFace();
         processActionType();
         processActionDescription();
@@ -263,7 +262,7 @@ public class ActionScript : MonoBehaviour
 
         // Mise à jour des risques pour l'action actuelle
         actionVariation.AdjustActionRisks(actionName, newSlightFluctuationChance, newCrashChance);
-        GameObject.Find("testmanager").GetComponent<PlayerManager>().actions.Add(this, initialActionStock);
+        GameObject.Find("testmanager").GetComponent<PlayerManager>().OnBuyAction(this, initialActionStock);
     }
 
     //To increment / decrement the risk warn value on third panel

@@ -74,13 +74,15 @@ public class ActionUse : MonoBehaviour
             TMP_Text purchaseShareActionTMP = puchaseShareAction.GetComponentInChildren<TMP_Text>();
             TMP_Text currentValueActionTMP = currentValueAction.GetComponentInChildren<TMP_Text>();
             currentActionTMP.text = playerManager.actions.ElementAt(actionIndex).Value.ToString();
-            purchaseShareActionTMP.text = "Purchase Shares : $" + playerManager.actions.ElementAt(actionIndex).Key.baseBubbleValue.ToString();
-            currentValueActionTMP.text = "Current Value Shares : $" + playerManager.actions.ElementAt(actionIndex).Key.currentBubbleValue.ToString();
+
+            float tmp = playerManager.actions.ElementAt(actionIndex).Key.baseBubbleValue / playerManager.actions.ElementAt(actionIndex).Key.initialActionStock;
+            float tmp2 = playerManager.actions.ElementAt(actionIndex).Key.currentBubbleValue / playerManager.actions.ElementAt(actionIndex).Key.initialActionStock;
+            
+            purchaseShareActionTMP.text = "Purchase Shares : $" + tmp.ToString();
+            currentValueActionTMP.text = "Current Value Shares : $" + tmp2.ToString();
             numberToSell = 0;
             currentWindowAction = actionIndex;
             panel.SetActive(true);
-
-
         }
     }
 
