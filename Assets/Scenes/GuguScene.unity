@@ -1486,6 +1486,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 423044325051632513, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
   m_PrefabInstance: {fileID: 727899368883216249}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &878523306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4835768541646927842, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+  m_PrefabInstance: {fileID: 727899368883216249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &879717347 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3424696995787723671, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
@@ -3987,6 +3992,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 331070764}
     m_Modifications:
+    - target: {fileID: 159001676952512595, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2119229211277308628}
+    - target: {fileID: 159001676952512595, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickDecrementSellAmount
+      objectReference: {fileID: 0}
+    - target: {fileID: 159001676952512595, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ActionUse, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 261915582085393871, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4067,9 +4084,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1694086238890386710, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2119229211277308628}
+    - target: {fileID: 1694086238890386710, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickBigDecrementSellAmount
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694086238890386710, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ActionUse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809318929341664199, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809318929341664199, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -697676565333083181, guid: 3dc2ba180e9bf524cb906dfd51242b00, type: 3}
     - target: {fileID: 3195986855067918737, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
       propertyPath: m_Name
       value: SellButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391749710766586999, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2119229211277308628}
+    - target: {fileID: 3391749710766586999, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickMaxIncrementSellAmount
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391749710766586999, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ActionUse, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3424696995787723671, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
       propertyPath: m_Name
@@ -4082,6 +4131,70 @@ PrefabInstance:
     - target: {fileID: 3607781526341123596, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
       propertyPath: m_Name
       value: AskFollowToSell
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796394911956897884, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2119229211277308628}
+    - target: {fileID: 3796394911956897884, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickSell
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796394911956897884, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ActionUse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596201437605979603, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2119229211277308628}
+    - target: {fileID: 4596201437605979603, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickBigIncrementSellAmount
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596201437605979603, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ActionUse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412551438437377690, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -40.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060134580206912939, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -22.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086627055130685510, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2119229211277308628}
+    - target: {fileID: 7086627055130685510, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickIncrementSellAmount
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086627055130685510, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ActionUse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555499674782076763, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555499674782076763, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -697676565333083181, guid: 3dc2ba180e9bf524cb906dfd51242b00, type: 3}
+    - target: {fileID: 7615833092984950004, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2119229211277308628}
+    - target: {fileID: 7615833092984950004, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickMinIncrementSellAmount
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615833092984950004, guid: ce8a97da04e8d0c49b72be20c1fefd9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ActionUse, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -4531,6 +4644,10 @@ MonoBehaviour:
   currentAction: {fileID: 320441793}
   puchaseShareAction: {fileID: 704690943}
   currentValueAction: {fileID: 47099070}
+  totalSellingActions: {fileID: 878523306}
+  numberToSell: 0
+  currentWindowAction: 0
+  totalSellActionTMP: {fileID: 0}
 --- !u!1001 &6213253686572446959
 PrefabInstance:
   m_ObjectHideFlags: 0
