@@ -41,11 +41,13 @@ public class GameManager : MonoBehaviour
     // [TODO] à équilibrer
     private float timeBetweenNews = 10.0f;
     private float newsProba = 0.5f;
+    private GameObject UI_actionList;
 
     private DynamicMusicManager musicManager;//Ame pour la musique
 
     void Start()
     {
+        UI_actionList = GameObject.Find("ActionList");
         musicManager = FindFirstObjectByType<DynamicMusicManager>(); //Ame pour la musique  pas sure que ce soit la bonne méthode deprecated shit
     }
 
@@ -75,7 +77,7 @@ public class GameManager : MonoBehaviour
         UnityEngine.Vector3 spawnPoint = new Vector3(randSpawnX, randSpawnY, 0);
         GameObject action = Instantiate(actionPrefab, spawnPoint, Quaternion.identity);
         Destroy(action, 10.0f); //TO IMPLEMENT IN PREFAB
-        action.transform.parent = GameObject.Find("ActionList").transform;
+        action.transform.parent = UI_actionList.transform;
         action.transform.localScale = new Vector3(1, 1, 1);
 
         // ici mettre le son de spawn de l'action lie au personnage recuperer le nomm et activer son X si perso X son Y si perso Y dans l'audiosource 2 
