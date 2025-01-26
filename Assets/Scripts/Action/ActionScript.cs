@@ -64,6 +64,8 @@ public class ActionScript : MonoBehaviour
 
     private void Start()
     {
+        ASOIndex = Mathf.RoundToInt(Random.Range(0, ASO.actionParamList.Count));
+
         processVendorFace();
         processActionType();
         processActionDescription();
