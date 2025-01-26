@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
             bubbleTimer = 0.0f;
             bubble.UpdateValue();
         }
-        if (actionTimer >= 10.0f)
+        if (actionTimer >= 5.0f)
         {
             actionTimer = 0.0f;
             spawnAction();
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
         float randSpawnY = Random.Range(spawnZone.bounds.min.y, spawnZone.bounds.max.y);
         UnityEngine.Vector3 spawnPoint = new Vector3(randSpawnX, randSpawnY, 0);
         GameObject action = Instantiate(actionPrefab, spawnPoint, Quaternion.identity);
-        Destroy(action, 10.0f); //TO IMPLEMENT IN PREFAB
+        Destroy(action, 20.0f); //TO IMPLEMENT IN PREFAB
         action.transform.parent = UI_actionList.transform;
         action.transform.localScale = new Vector3(1, 1, 1);
 

@@ -47,15 +47,18 @@ public class VariationActions : MonoBehaviour
     void updatePlayerActions(string name, float variation, operation op)
     {
         PlayerManager playerManager = GameObject.Find("testmanager").GetComponent<PlayerManager>();
-
+        
         foreach(var action in playerManager.actions)
         {
             if(action.Key.actionName == name)
             {
-                switch(op)
+                
+                switch (op)
                 {
                     case operation.plus:
+                        variation *= action.Key.initialActionStock;
                         action.Key.currentBubbleValue += variation;
+
                         break;
                     case operation.fois:
                         action.Key.currentBubbleValue *= variation;
@@ -63,47 +66,42 @@ public class VariationActions : MonoBehaviour
 
                     default: break;
                 }
+                
             }
         }
     }
 
     void GenerateVariations()
     {
-       
-
         foreach (ActionData action in actions)
         {
             float randomValue = Random.Range(0f, 100f); // Générer un nombre aléatoire entre 0 et 100
 
             if (randomValue <= action.slightFluctuationChance) // Fluctuation légère
             {
-                float variation = Random.Range(-action.slightFluctuation, action.slightFluctuation);
+                float variation = Random.Range(-(int)action.slightFluctuation, (int)action.slightFluctuation);
                 action.currentValue += variation;
-                updatePlayerActions(action.name, variation, operation.plus);
-
                 Debug.Log($"[{action.name}] Fluctuation légère : {variation} -> Nouvelle valeur : {action.currentValue}");
             }
             else if (randomValue <= action.slightFluctuationChance + action.crashChance) // Chute/crash
             {
                 action.currentValue *= action.crashFactor;
-                updatePlayerActions(action.name, action.crashFactor, operation.fois);
                 Debug.Log($"[{action.name}] Chute/crash ! Nouvelle valeur : {action.currentValue}");
                 if (musicManager != null)
                 {
                     musicManager.PlayBadVariation(); // Play bad news variation
                 }
-                SetNews("Chute/crash", action.crashFactor);
+                SetNews(action.name, action.crashFactor);
             }
             else // Montée en flèche
             {
                 action.currentValue *= action.surgeFactor;
-                updatePlayerActions(action.name, action.surgeFactor, operation.fois);
                 Debug.Log($"[{action.name}] Montée en flèche ! Nouvelle valeur : {action.currentValue}");
                 if (musicManager != null)
                 {
                     musicManager.PlayGoodVariation(); // Play good news variation
                 }
-                SetNews("Montée en flèche", action.surgeFactor);
+                SetNews(action.name, action.surgeFactor);
             }
         }
     }
