@@ -13,6 +13,9 @@ public enum NewsType
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Interface")]
+    public GameObject canvasInterfaceBase;
+    public GameObject canvasGestionActions;
 
     [SerializeField] NewsScriptableObject newsData;
     [SerializeField] GameObject newsPrefab;
@@ -93,6 +96,16 @@ public class GameManager : MonoBehaviour
         musicManager.PlayActionSpawnSfx(actionScript.VendorIndex);
         
         
+    }
+    public void OnClickManageActions()
+    {
+        canvasGestionActions.SetActive(true);
+        canvasInterfaceBase.SetActive(false);
+    }
+    public void OnClickBackButton()
+    {
+        canvasInterfaceBase.SetActive(true);
+        canvasGestionActions.SetActive(false);
     }
 
     // [TODO] à équilibrer
