@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         shellNumber = .0f;
-        bubbleNumber = 500.0f;
+        bubbleNumber = 30 000f;
         actions.Add(listActionScript[0], 10);
         actions.Add(listActionScript[1], 20);
         actions.Add(listActionScript[2], 30);
