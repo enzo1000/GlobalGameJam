@@ -28,6 +28,8 @@ public class Bubble: MonoBehaviour
 
         if (shellValue <= 0)
             shellValue = Random.Range(0.01f, 0.07f);
+        else if (shellValue >= 10)
+            shellValue = Random.Range(9.01f, 9.06f);
 
         lastData.Add(shellValue);
         if (lastData.Count > 30)

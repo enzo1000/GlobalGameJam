@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
 
         // cours de la bubble
         bubbleTimer += Time.deltaTime;
-        if(bubbleTimer >= 1.0f)
+        if(bubbleTimer >= 0.2f)
         {
             bubbleTimer = 0.0f;
             bubble.UpdateValue();
