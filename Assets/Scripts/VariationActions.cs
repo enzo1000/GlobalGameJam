@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 
 
-public class ActionVariation : MonoBehaviour
+public class VariationActions : MonoBehaviour
 {
     public float interval = 5f; // Intervalle en secondes pour chaque variation
     public List<ActionData> actions = new List<ActionData>(); // Liste des actions
@@ -95,5 +95,28 @@ public class ActionVariation : MonoBehaviour
         UI_newsDescription.GetComponent<TMP_Text>().text = "aaaaaaaaaaa";
         UI_newsVariation.GetComponent<TMP_Text>().text = newsVariation.ToString();
         Debug.Log($"News : {actionName} - {"aaaaaaaaa"} - {newsVariation}");
+    }
+
+
+
+
+    public void AdjustActionRisks(string actionName, float newSlightFluctuationChance, float newCrashChance)
+    {
+        foreach (ActionData action in actions)
+        {
+            if (action.name == actionName)
+            {
+                // Ajuster les chances
+                action.slightFluctuationChance = newSlightFluctuationChance;
+                action.crashChance = newCrashChance;
+
+                Debug.Log($"Risques mis à jour pour {actionName}:");
+                Debug.Log($"Fluctuation légère: {action.slightFluctuationChance}%");
+                Debug.Log($"Crash: {action.crashChance}%");
+                return;
+            }
+        }
+
+        Debug.LogWarning($"Action {actionName} non trouvée pour ajustement des risques.");
     }
 }

@@ -222,6 +222,20 @@ public class ActionScript : MonoBehaviour
     public void OpenCommunicationCanva(GameObject canva)
     {
         canva.SetActive(true);
+
+        // Trouver ActionVariation
+        VariationActions actionVariation = FindFirstObjectByType<VariationActions>();
+
+
+        // Calcul des nouveaux risques
+        float newCrashChance = investDanger / 8; // a modifier c'est une valeur random
+        float newSlightFluctuationChance = Mathf.Clamp(100f - newCrashChance - 5f, 0f, 100f);
+
+        // Mise à jour des risques pour l'action actuelle
+        actionVariation.AdjustActionRisks(actionName, newSlightFluctuationChance, newCrashChance);
+        Debug.Log("Communication");
+
+        canva.SetActive(false);
     }
 
     //To increment / decrement the risk warn value on third panel
