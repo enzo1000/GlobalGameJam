@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -69,5 +70,18 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("Button was clicked!");
     }
+
+
+    public void ReturnToMainMenu()
+    {
+        Time.timeScale = 1f; 
+        SceneManager.LoadScene("MainMenu"); 
+    }
+
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene("AmeScene");
+    }
+
 }
 
