@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private PlayerManager player;
 
-    private float victoryGoal;
+    public float victoryGoal = 3000;
     List<ActionScript> visibleActions = new List<ActionScript>();
 
     private float newsTimer = 0.0f;
@@ -47,13 +47,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
-        //AME TESTS__
-        // condition de victoire
-        /*if (player.shellNumber >= victoryGoal)
-            Debug.Log("GG tu as gagne un milleTplat + cul de la cadreuse");
-        */
-
-        // cours de la bubble
         bubbleTimer += Time.deltaTime;
 
         actionTimer += Time.deltaTime;
@@ -76,6 +69,7 @@ public class GameManager : MonoBehaviour
         float randSpawnY = Random.Range(spawnZone.bounds.min.y, spawnZone.bounds.max.y);
         UnityEngine.Vector3 spawnPoint = new Vector3(randSpawnX, randSpawnY, 0);
         GameObject action = Instantiate(actionPrefab, spawnPoint, Quaternion.identity);
+        // Destroy(action, 10.0f);
         action.transform.parent = GameObject.Find("ActionList").transform;
         action.transform.localScale = new Vector3(1, 1, 1);
 
@@ -94,8 +88,6 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f); // Attendre 0.2 secondes
         ActionScript actionScript = action.GetComponent<ActionScript>();
         musicManager.PlayActionSpawnSfx(actionScript.VendorIndex);
-        
-        
     }
     public void OnClickManageActions()
     {
@@ -177,5 +169,29 @@ public class GameManager : MonoBehaviour
     {
         float variation = 1f;
         return variation;
+    }
+
+    public void EndGame()
+    {
+        if (player.shellNumber >= victoryGoal)
+            Debug.Log("GG tu as gagne un milleTplat + cul de la cadreuse");
+        else
+            Debug.Log(
+                "\r\neya tsu tsa paveri paveron" +
+                "\r\nlantic ta deli landing standoun" +
+                "\r\nLa dibidabidam la rou patirou pidam" +
+                "\r\nCurican gu geaki geganku" +
+                "\r\n" +
+                "\r\nAra tsapitsa yalibilabidi labidi" +
+                "\r\nStandin landen lando" +
+                "\r\nAbaritapita pari pari" +
+                "\r\nPari bilibilibili stenden lando" +
+                "\r\nYabadin la sten lande yalo" +
+                "\r\nAlabala balebele bedou yavou" +
+                "\r\n" +
+                "\r\nBali zdale lazde lando" +
+                "\r\nBadageda gedageda ya de dou dou" +
+                "\r\nde ya do"
+            );
     }
 }

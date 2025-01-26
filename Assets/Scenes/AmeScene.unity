@@ -1834,6 +1834,7 @@ MonoBehaviour:
   actionPrefab: {fileID: 2879092881630564915, guid: d6bdd43e029dddc4b91034b10038b0dc, type: 3}
   bubble: {fileID: 510945044}
   player: {fileID: 670781220}
+  victoryGoal: 3000
 --- !u!4 &670781222
 Transform:
   m_ObjectHideFlags: 0
@@ -4634,9 +4635,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2087969878}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: OnButtonClick
+      - m_Target: {fileID: 670781220}
+        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
+        m_MethodName: OnMarketQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

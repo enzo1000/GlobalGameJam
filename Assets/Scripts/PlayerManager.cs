@@ -105,4 +105,10 @@ public class PlayerManager : MonoBehaviour
     {
         return bubbleNumber;
     }
+
+    public void OnMarketQuit()
+    {
+        shellNumber = GameObject.Find("Bubble").GetComponent<Bubble>().shellValue * bubbleNumber;
+        GetComponent<GameManager>().EndGame();
+    }
 }
