@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] NewsScriptableObject newsData;
     [SerializeField] GameObject newsPrefab;
-    [SerializeField] List<GameObject> actionSpawnList;
+    [SerializeField] GameObject actionSpawnZone;
     public GameObject actionPrefab;
 
     [SerializeField] private Bubble bubble;
@@ -38,7 +38,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         musicManager = FindFirstObjectByType<DynamicMusicManager>(); //Ame pour la musique  pas sure que ce soit la bonne méthode deprecated shit
-        actionDisplayedIndex = new int[actionSpawnList.Count];
     }
 
     void Update()
@@ -59,7 +58,7 @@ public class GameManager : MonoBehaviour
             bubbleTimer = 0.0f;
             bubble.UpdateValue();
         }
-        if (actionTimer >= 5.0f)
+        if (actionTimer >= 1.0f)
         {
             actionTimer = 0.0f;
             spawnAction();
@@ -68,28 +67,13 @@ public class GameManager : MonoBehaviour
 
     private void spawnAction()
     {
-        int randSpawn = Mathf.RoundToInt(Random.Range(0, actionSpawnList.Count));
-
-        if (actionDisplayedIndex[randSpawn] == 0)
-        {
-            actionDisplayedIndex[randSpawn] = 1;
-            Instantiate(actionPrefab, actionSpawnList[randSpawn].transform);
-        }
-        else
-        {
-            int tmp = 0;
-            foreach (int i in actionDisplayedIndex)
-            {
-                if (i == 1)
-                {
-                    tmp++;
-                }
-            }
-            if (tmp < actionSpawnList.Count)
-            {
-                spawnAction();
-            }
-        }
+        BoxCollider2D spawnZone = actionSpawnZone.GetComponent<BoxCollider2D>();
+        float randSpawnX = Random.Range(spawnZone.bounds.min.x, spawnZone.bounds.max.x);
+        float randSpawnY = Random.Range(spawnZone.bounds.min.y, spawnZone.bounds.max.y);
+        UnityEngine.Vector3 spawnPoint = new Vector3(randSpawnX, randSpawnY, 0);
+        GameObject action = Instantiate(actionPrefab, spawnPoint, Quaternion.identity);
+        action.transform.parent = GameObject.Find("ActionList").transform;
+        action.transform.localScale = new Vector3(1, 1, 1);
     }
 
     // [TODO] à équilibrer
