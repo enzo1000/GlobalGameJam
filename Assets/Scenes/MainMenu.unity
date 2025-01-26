@@ -1448,7 +1448,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Marie Le Mezec\n\n\n\nMoustique ______\n\n\n\n Kenney"
+  m_text: "Marie Le Mezec\n\n\n\nBastien Escalas\n\n\n\n Kenney"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad2f19f9de3bd8e49bce0bd6664ba0af, type: 2}
   m_sharedMaterial: {fileID: 5941849394816310287, guid: ad2f19f9de3bd8e49bce0bd6664ba0af, type: 2}
