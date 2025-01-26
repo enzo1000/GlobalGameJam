@@ -813,15 +813,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: BubbleGraph
       objectReference: {fileID: 0}
-    - target: {fileID: 5361664799394891727, guid: 289f192a8ee41d5488ed8bd2acba49be, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 34
+    - target: {fileID: 3831116068764004370, guid: 289f192a8ee41d5488ed8bd2acba49be, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3885965031448663827, guid: 289f192a8ee41d5488ed8bd2acba49be, type: 3}
+      propertyPath: o_O
+      value: 
+      objectReference: {fileID: 6814394987747557716}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 289f192a8ee41d5488ed8bd2acba49be, type: 3}
+--- !u!1 &6814394987747557716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3831116068764004370, guid: 289f192a8ee41d5488ed8bd2acba49be, type: 3}
+  m_PrefabInstance: {fileID: 6814394987747557715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

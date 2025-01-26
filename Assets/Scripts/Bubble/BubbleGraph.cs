@@ -10,6 +10,7 @@ public class BubbleGraph : MonoBehaviour
 {
     [SerializeField] private Sprite circleSprite;
     [SerializeField] private TMP_Text lastValue;
+    [SerializeField] private GameObject o_O;
     private RectTransform graphContainer;
 
     private void Awake()
@@ -36,7 +37,7 @@ public class BubbleGraph : MonoBehaviour
 
         float grapHeight = graphContainer.sizeDelta.y;
         float yMaximum = 30f;
-        float xMinimum = 0.5f;
+        float xMinimum = 0.2f;
         float xSize = 25f;
 
         GameObject lastCircleGameObject = null;
@@ -51,6 +52,15 @@ public class BubbleGraph : MonoBehaviour
                 CreateDotConnection(lastCircleGameObject.GetComponent<RectTransform>().anchoredPosition, circleGameObject.GetComponent<RectTransform>().anchoredPosition);
             }
             lastCircleGameObject = circleGameObject;
+        }
+
+        if(valueList[valueList.Count - 1] > 9)
+        {
+            o_O.SetActive(true);
+        }
+        else
+        {
+            o_O.SetActive(false);
         }
 
         String text = Round(valueList[valueList.Count - 1], 3).ToString();
