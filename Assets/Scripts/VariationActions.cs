@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class VariationActions : MonoBehaviour
 {
-    public float interval = 5f; // Intervalle en secondes pour chaque variation
+    public float interval = 4f; // Intervalle en secondes pour chaque variation
     public List<ActionData> actions = new List<ActionData>(); // Liste des actions
 
     private DynamicMusicManager musicManager;//Ame pour la musique
