@@ -18,7 +18,8 @@ MonoBehaviour:
     actionSellerName: "Sacr\xE9 homar"
     visibilityCooldown: 10
     actionDescription: Le gros tarpet de madame crabe
-    initialActionCost: 15
+    minInitialActionCost: 20
+    maxInitialActionCost: 60
     initialActionStock: 50
-    investDanger: 20
-    availableQuantity: 0
+    minInvestDanger: 10
+    maxInvestDanger: 90

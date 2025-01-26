@@ -1036,6 +1036,7 @@ MonoBehaviour:
   playerInvested: 0
   asExplosed: 0
   ASO: {fileID: 11400000, guid: 56e096df41c2fd84f9589e4d279c5c67, type: 2}
+  VFSO: {fileID: 11400000, guid: a045601188f23c24ab0f851bac9397c4, type: 2}
   ASOIndex: 0
   currentBubbleValue: 0
   baseBubbleValue: 0

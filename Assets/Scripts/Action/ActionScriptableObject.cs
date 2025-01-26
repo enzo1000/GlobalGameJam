@@ -15,9 +15,11 @@ public struct actionParam
 
     //SecondPanel Information
     public string actionDescription;
-    public float initialActionCost;
+    public float minInitialActionCost;
+    public float maxInitialActionCost;
     public int initialActionStock;
-    public float investDanger;
+    public float minInvestDanger;
+    public float maxInvestDanger;
 }
 
 [CreateAssetMenu(fileName = "ActionScriptableObject", menuName = "Scriptable Objects/ActionScriptableObject")]
