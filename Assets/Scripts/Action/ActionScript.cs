@@ -233,7 +233,7 @@ public class ActionScript : MonoBehaviour
 
 
         // Calcul des nouveaux risques
-        float newCrashChance = investDanger / 8; // a modifier c'est une valeur random
+        float newCrashChance = investDanger; // a modifier c'est une valeur random /////////////////////////////////////////////////////
         float newSlightFluctuationChance = Mathf.Clamp(100f - newCrashChance - 5f, 0f, 100f);
 
         // Mise à jour des risques pour l'action actuelle
