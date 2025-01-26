@@ -36,7 +36,7 @@ public class BubbleGraph : MonoBehaviour
         ClearGraph();
 
         float grapHeight = graphContainer.sizeDelta.y;
-        float yMaximum = 30f;
+        float yMaximum = 15f;
         float xMinimum = 0.2f;
         float xSize = 30f;
 
@@ -54,7 +54,7 @@ public class BubbleGraph : MonoBehaviour
             lastCircleGameObject = circleGameObject;
         }
 
-        if(valueList[valueList.Count - 1] > 9)
+        if(valueList[valueList.Count - 1] > 4)
         {
             o_O.SetActive(true);
         }
