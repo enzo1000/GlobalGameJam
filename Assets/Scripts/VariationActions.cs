@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 
 public class ActionVariation : MonoBehaviour
@@ -8,6 +9,14 @@ public class ActionVariation : MonoBehaviour
     public List<ActionData> actions = new List<ActionData>(); // Liste des actions
 
     private DynamicMusicManager musicManager;//Ame pour la musique
+
+
+    public NewsScriptableObject newsScriptableObject;
+
+    // attention ca risque de casser on veut generer plus news differentes
+    public GameObject UI_newsName;
+    public GameObject UI_newsDescription;
+    public GameObject UI_newsVariation;
 
     private float timer;
 
@@ -49,6 +58,7 @@ public class ActionVariation : MonoBehaviour
                 {
                     musicManager.PlayBadVariation(); // Play bad news variation
                 }
+                SetNews("Chute/crash", action.crashFactor);
             }
             else // Montée en flèche
             {
@@ -58,7 +68,32 @@ public class ActionVariation : MonoBehaviour
                 {
                     musicManager.PlayGoodVariation(); // Play good news variation
                 }
+                SetNews("Montée en flèche", action.surgeFactor);
             }
         }
+    }
+
+
+
+
+    public void SetNews(string actionName, float newsVariation)
+    {
+        foreach (var news in newsScriptableObject.newsParamList)
+        {
+            if (news.newsName == actionName)
+            {
+                UI_newsName.GetComponent<TMP_Text>().text = actionName;
+                UI_newsDescription.GetComponent<TMP_Text>().text = news.newsDescription;
+                UI_newsVariation.GetComponent<TMP_Text>().text = newsVariation.ToString();
+
+                Debug.Log($"News : {actionName} - {news.newsDescription} - {newsVariation}");
+                return;
+            }
+        }
+        //test de secours a enlever
+        UI_newsName.GetComponent<TMP_Text>().text = actionName;
+        UI_newsDescription.GetComponent<TMP_Text>().text = "aaaaaaaaaaa";
+        UI_newsVariation.GetComponent<TMP_Text>().text = newsVariation.ToString();
+        Debug.Log($"News : {actionName} - {"aaaaaaaaa"} - {newsVariation}");
     }
 }
