@@ -20,6 +20,8 @@ public struct actionParam
     public int initialActionStock;
     public float minInvestDanger;
     public float maxInvestDanger;
+    public float minSkyrocketChance;
+    public float maxSkyrocketChance;
 }
 
 [CreateAssetMenu(fileName = "ActionScriptableObject", menuName = "Scriptable Objects/ActionScriptableObject")]
