@@ -21,19 +21,28 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         shellNumber = .0f;
-        bubbleNumber = 500.0f;
+        bubbleNumber = 10000.0f;
     }
 
     public void OnBuyAction(ActionScript action, int quantity)
     {
-        if (quantity * action.currentBubbleValue < bubbleNumber)
+        Debug.Log("taille: " + quantity);
+        if (action.currentBubbleValue < bubbleNumber)
         {
             if (actions.ContainsKey(action))
+            {
+                Debug.Log("On a deja laction");
                 actions[action] += quantity;
+            }
             else
+            {
+                Debug.Log("On ajoute l'action on l'avait pas");
                 actions.Add(action, quantity);
-               
-            action.playerInvested += quantity * action.currentBubbleValue;
+            }
+
+            bubbleNumber -= action.currentBubbleValue;
+
+            //action.playerInvested += quantity * action.currentBubbleValue;
         }
     }
 
@@ -42,7 +51,7 @@ public class PlayerManager : MonoBehaviour
         if (!actions.ContainsKey(action) || actions[action] < quantity)
             return -1;
 
-        bubbleNumber += quantity * action.currentBubbleValue;
+        bubbleNumber += quantity * (action.currentBubbleValue / action.initialActionStock);
         actions[action] -= quantity;
         if (actions[action] <= 0)
         {

@@ -42,6 +42,35 @@ public class VariationActions : MonoBehaviour
         }
     }
 
+    enum operation {plus, fois}
+
+    void updatePlayerActions(string name, float variation, operation op)
+    {
+        PlayerManager playerManager = GameObject.Find("testmanager").GetComponent<PlayerManager>();
+        
+        foreach(var action in playerManager.actions)
+        {
+            if(action.Key.actionName == name)
+            {
+                
+                switch (op)
+                {
+                    case operation.plus:
+                        variation *= action.Key.initialActionStock;
+                        action.Key.currentBubbleValue += variation;
+
+                        break;
+                    case operation.fois:
+                        action.Key.currentBubbleValue *= variation;
+                        break;
+
+                    default: break;
+                }
+                
+            }
+        }
+    }
+
     void GenerateVariations()
     {
         foreach (ActionData action in actions)
@@ -50,7 +79,7 @@ public class VariationActions : MonoBehaviour
 
             if (randomValue <= action.slightFluctuationChance) // Fluctuation légère
             {
-                float variation = Random.Range(-action.slightFluctuation, action.slightFluctuation);
+                float variation = Random.Range(-(int)action.slightFluctuation, (int)action.slightFluctuation);
                 action.currentValue += variation;
                 Debug.Log($"[{action.name}] Fluctuation légère : {variation} -> Nouvelle valeur : {action.currentValue}");
             }
