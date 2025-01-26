@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         shellNumber = .0f;
-        bubbleNumber = 10000.0f;
+        bubbleNumber = 30000.0f;
     }
 
     public void OnBuyAction(ActionScript action, int quantity)
