@@ -15,10 +15,15 @@ public class ActionScript : MonoBehaviour
     private (StaticThreshold.Levels, StaticThreshold.Levels) vendorType;
     private int vendorIndex;
     private int actionTypeIndex;
+    private float skyrocketChance;
+
+    [Range(0, 1)]
+    public float skyrocketMultiplier;
 
     public ActionScriptableObject ASO;
     public VendorFaceScriptableObject VFSO;
     public ActionTypeScriptableObject ATSO;
+    public DescriptionScriptableObject DSO;
     public int ASOIndex = 0;
 
     //First Panel
@@ -61,9 +66,13 @@ public class ActionScript : MonoBehaviour
     {
         processVendorFace();
         processActionType();
+        processActionDescription();
         InitFirstPanel();
         InitSecondPanel();
         InitThirdPanel();
+
+        skyrocketChance = Random.Range(ASO.actionParamList[ASOIndex].minSkyrocketChance, 
+                                        ASO.actionParamList[ASOIndex].maxSkyrocketChance);
     }
 
     public int VendorIndex
@@ -178,11 +187,24 @@ public class ActionScript : MonoBehaviour
 
         if (actionTypeIndex == 0)
         {
-            //Inserer l'image associe
+            //Inserer l'image associe j'imagine
         }
         else
         {
             //...
+        }
+    }
+
+    private void processActionDescription()
+    {
+        //vendorIndex
+        //actionTypeIndex
+        foreach (var currentDSO in DSO.actionDescriptionList)
+        {
+            if (currentDSO.vendorIndex == vendorIndex & currentDSO.actionTypeIndex == actionTypeIndex)
+            {
+                UI_actionDescription.GetComponent<TMP_Text>().text = currentDSO.actionDescriptionText;
+            }
         }
     }
 
@@ -203,12 +225,12 @@ public class ActionScript : MonoBehaviour
         actionDescription = ASO.actionParamList[ASOIndex].actionDescription;
         initialActionStock = ASO.actionParamList[ASOIndex].initialActionStock;
 
-        UI_actionDescription.GetComponent<TMP_Text>().text = actionDescription;
         UI_actionName2.GetComponent<TMP_Text>().text = actionName;
         currentBubbleValue = baseBubbleValue;
         UI_initialActionStock.GetComponent<TMP_Text>().text = "(" + initialActionStock.ToString() + ")";
         UI_investDanger.GetComponent<TMP_Text>().text = investDanger.ToString() + "%";
     }
+
     private void InitThirdPanel()
     {
         //Third Panel
@@ -231,15 +253,14 @@ public class ActionScript : MonoBehaviour
         // Trouver ActionVariation
         VariationActions actionVariation = FindFirstObjectByType<VariationActions>();
 
-
         // Calcul des nouveaux risques
-        float newCrashChance = investDanger; // a modifier c'est une valeur random /////////////////////////////////////////////////////
-        float newSlightFluctuationChance = Mathf.Clamp(100f - newCrashChance - 5f, 0f, 100f);
+        float newCrashChance = investDanger; // a modifier c'est une valeur random
+        float newSurgeChance = skyrocketChance;
+        float newSlightFluctuationChance = Mathf.Clamp(100f - newCrashChance - newSurgeChance, 0f, 100f);
 
         // Mise à jour des risques pour l'action actuelle
         actionVariation.AdjustActionRisks(actionName, newSlightFluctuationChance, newCrashChance);
         Debug.Log("Communication");
-
     }
 
     //To increment / decrement the risk warn value on third panel

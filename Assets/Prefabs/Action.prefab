@@ -1037,6 +1037,8 @@ MonoBehaviour:
   asExplosed: 0
   ASO: {fileID: 11400000, guid: 56e096df41c2fd84f9589e4d279c5c67, type: 2}
   VFSO: {fileID: 11400000, guid: a045601188f23c24ab0f851bac9397c4, type: 2}
+  ATSO: {fileID: 11400000, guid: 0cdb22be791f7f947bcb1c7b420c7be9, type: 2}
+  DSO: {fileID: 11400000, guid: 6ca676e6c465e9442884a7012c816c94, type: 2}
   ASOIndex: 0
   currentBubbleValue: 0
   baseBubbleValue: 0
