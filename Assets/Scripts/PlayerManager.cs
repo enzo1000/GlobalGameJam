@@ -41,15 +41,20 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void OnSellAction(ActionScript action, int quantity)
+    public int OnSellAction(ActionScript action, int quantity)
     {
         if (!actions.ContainsKey(action) || actions[action] < quantity)
-            return;
+            return -1;
 
         bubbleNumber += quantity * action.currentBubbleValue;
         actions[action] -= quantity;
         if (actions[action] <= 0)
+        {
             actions.Remove(action);
+            return 0;
+        }
+        else
+            return actions[action];
     }
 
     // lancer des corroutines pour le faire dans le temps

@@ -92,6 +92,8 @@ public class ActionScript : MonoBehaviour
         //Third Panel
         UI_Timer3.GetComponent<TMP_Text>().text = visibilityCooldown.ToString();
 
+        UI_initialActionStock.GetComponent<TMP_Text>().text = "(" + initialActionStock.ToString() + ")";
+
         //Navigation behavior
         if (UI_actionName.transform.parent.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Selected"))
         {
