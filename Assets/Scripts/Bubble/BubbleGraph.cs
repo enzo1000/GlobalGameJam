@@ -38,7 +38,7 @@ public class BubbleGraph : MonoBehaviour
         float grapHeight = graphContainer.sizeDelta.y;
         float yMaximum = 30f;
         float xMinimum = 0.2f;
-        float xSize = 25f;
+        float xSize = 30f;
 
         GameObject lastCircleGameObject = null;
         for (int i = 0; i < valueList.Count; i++)
