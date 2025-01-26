@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: DefaultVendorFaces
   m_EditorClassIdentifier: 
   vendorFacesList:
-  - actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
-  - actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
-  - actionSellerImage: {fileID: 6741635370934309129, guid: 769ec0ca03c9b5043b9df78d53286de5, type: 3}
+  - actionSellerImage: {fileID: 21300000, guid: d2810158aaa4af14cb007258ba4218b0, type: 3}
+  - actionSellerImage: {fileID: 21300000, guid: 85f715550bd375840a70fd8104390afc, type: 3}
+  - actionSellerImage: {fileID: 21300000, guid: 769ec0ca03c9b5043b9df78d53286de5, type: 3}
   - actionSellerImage: {fileID: 1361929745596671473, guid: 53f6ad81ca9ba6545a6c72d75307e786, type: 3}
-  - actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
-  - actionSellerImage: {fileID: 1208040086343421634, guid: 6e8465e2b4f4e514bb8acbe398333308, type: 3}
-  - actionSellerImage: {fileID: -4062724989006838851, guid: 85f715550bd375840a70fd8104390afc, type: 3}
+  - actionSellerImage: {fileID: 21300000, guid: 6aded855479bfa94f9c67a2147c7429f, type: 3}
+  - actionSellerImage: {fileID: 21300000, guid: 7bcceca14dfdbe1438b655f0c420185e, type: 3}
+  - actionSellerImage: {fileID: 21300000, guid: b67bf08a6e1530142b6679e37ca4d457, type: 3}
+  - actionSellerImage: {fileID: 21300000, guid: d2810158aaa4af14cb007258ba4218b0, type: 3}

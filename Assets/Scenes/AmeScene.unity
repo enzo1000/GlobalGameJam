@@ -1569,7 +1569,7 @@ MonoBehaviour:
   sfxSource: {fileID: 675408729}
   characterSFXList:
   - index: 0
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 71e4c8fd7f971234bb16199b44920113, type: 3}
   - index: 1
     sfxClip: {fileID: 8300000, guid: c16eb3f731aab8d42ac15a8ac1fb19ee, type: 3}
   - index: 2
