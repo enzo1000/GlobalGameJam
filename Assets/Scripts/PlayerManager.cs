@@ -16,11 +16,16 @@ public class PlayerManager : MonoBehaviour
     private List<Follower> followers = new List<Follower>();
     public Dictionary<ActionScript, int> actions = new Dictionary<ActionScript, int>();
     private ActionScript selectedAction;
+    public ActionScriptableObject selectedActionObject;
+    public List<ActionScript> listActionScript;
 
     private void Start()
     {
         shellNumber = .0f;
         bubbleNumber = 500.0f;
+        actions.Add(listActionScript[0], 10);
+        actions.Add(listActionScript[1], 20);
+        actions.Add(listActionScript[2], 30);
     }
 
     public void OnBuyAction(ActionScript action, int quantity)

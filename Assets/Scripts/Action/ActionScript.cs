@@ -27,7 +27,7 @@ public class ActionScript : MonoBehaviour
     public int ASOIndex = 0;
 
     //First Panel
-    private string actionName;          //Name of the action
+    public string actionName;          //Name of the action
     private string actionSellerName;    //SellerName
     private Sprite actionSellerImage;
     private float visibilityCooldown;   //The visibility Cooldown of the Action
@@ -36,7 +36,7 @@ public class ActionScript : MonoBehaviour
     private string actionDescription;
     public float currentBubbleValue;
     public float baseBubbleValue;
-    private int initialActionStock;
+    public int initialActionStock;
     public float investDanger;          //A percent of chances for the Action to crash
 
     //UI
