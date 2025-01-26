@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
             bubbleTimer = 0.0f;
             bubble.UpdateValue();
         }
-        if (actionTimer >= 4.0f)
+        if (actionTimer >= 10.0f)
         {
             actionTimer = 0.0f;
             spawnAction();
